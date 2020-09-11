@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+
 });
-	//route testing by Ye Win Naing
-Route::get('/testing',function($value=''){
-	return 'This is route testing';
-});
+
+Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+
