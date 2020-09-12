@@ -26,9 +26,9 @@ class DiseaseController extends Controller
     public function create()
 
     {
-        $diseases =Disease::all( );
+        
         $products = Product::all();
-        return view('backend.diseases.create',compact('products','diseases'));
+        return view('backend.diseases.create',compact('products'));
     }
 
     /**
@@ -67,14 +67,12 @@ class DiseaseController extends Controller
                    //  $disease->products()->attach($pts, ['description'=>$des]);
 
 
-                   //      }
-            for($j=0;$j<count($product);$j++){
-                for($i=0;$i<count($description);$i++){
-                     $disease->products()->attach($product,['description' =>$description[$i]]);
-                 }
-                }
+             for($i=0; $i<count($product);$i++){
+                $array = [$product[$i] => ['description' => $description[$i]]
+            ];
 
-               
+            $disease->products()->attach($array);
+             }
 
                        
                      

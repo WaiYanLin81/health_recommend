@@ -48,7 +48,11 @@ class CategoryController extends Controller
         $category = new Category;
         $category->name = $request->name;
         $category->save();
+
+        return redirect()->route('categories.create');
     }
+
+
 
     /**
      * Display the specified resource.

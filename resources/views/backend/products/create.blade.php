@@ -35,6 +35,17 @@
            			</div>
 
 
+                  <div class="form-group row">
+                  <label for="description"  class="col-sm-2  col-form-label">Benefit</label>
+                  <div class="col-sm-5">
+                    <textarea class="form-control" id="de" name="benefit"></textarea>
+                    @if ($errors->has('description'))
+                    <span class="text-danger">{{ $errors->first('benefit')}}</span>
+                    @endif
+                  </div>
+                </div>
+
+
            			<div class="form-group row">
            				<label for="description" class="col-sm-2">category</label>
            				<select class="form-control-md" id="inputBrand" name="category">
@@ -54,7 +65,7 @@
     					</div>
  					</div>
         </form>
-        
+
            	</div>
 
 

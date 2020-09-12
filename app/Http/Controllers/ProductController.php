@@ -43,6 +43,8 @@ class ProductController extends Controller
             "name" => 'required',
             
             "photo" => 'required',
+
+            "benefit" => 'required',
             
             "category" => 'required'
          ]);
@@ -57,6 +59,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->photo = $path;
         $product->category_id = $request->category;
+        $product->benefit =$request->benefit;
 
         $product->save();
 
