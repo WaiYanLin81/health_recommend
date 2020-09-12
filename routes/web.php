@@ -16,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+Route::get('/','ShowController@indexfun')->name('index');
+Route::get('/login','ShowController@loginfun')->name('login');
+Route::get('/register','ShowController@registerfun')->name('register');
