@@ -15,16 +15,7 @@
                 @csrf
 
            			
-           			{{-- <div class="form-group row">
-           				<label for="codeno" class="col-sm-2 col-form-label">Code No</label>
-           				<div class="col-sm-5">
-           					<input type="text" class="form-control" id="codeno" name="codeno">
-                    @if ($errors->has('codeno'))
-                    <span class="text-danger">{{ $errors->first('codeno')}}</span>
-                    @endif
-           				</div>
-           			</div> --}}
-
+         
            			<div class="form-group row">
            				<label for="name" class="col-sm-2 col-form-label">Name</label>
            				<div class="col-sm-5">
@@ -42,49 +33,7 @@
            					<input type="file"  id="photo" name="photo">
            				</div>
            			</div>
-{{-- 
-           			<div class="form-group row">
-           				<label for="price" class="col-sm-2 col-form-label">Price</label>
-           				<div class="col-sm-5">
-           					<input type="number" class="form-control" id="price" name="price">
-                    @if ($errors->has('price'))
-                    <span class="text-danger">{{ $errors->first('price')}}</span>
-                    @endif
-           				</div>
-           			</div> --}}
 
-           			{{-- <div class="form-group row">
-           				<label for="discount" class="col-sm-2 col-form-label">Discount</label>
-           				<div class="col-sm-5">
-           					<input type="number" class="form-control" value="0" id="discount" name="discount">
-                    @if ($errors->has('discount'))
-                    <span class="text-danger">{{ $errors->first('discount')}}</span>
-                    @endif
-           				</div>
-           			</div> --}}
-
-           			{{-- <div class="form-group row">
-           				<label for="description"  class="col-sm-2  col-form-label">Description</label>
-           				<div class="col-sm-5">
-           					<textarea class="form-control" id="de" name="description"></textarea>
-                    @if ($errors->has('description'))
-                    <span class="text-danger">{{ $errors->first('description')}}</span>
-                    @endif
-           				</div>
-           			</div> --}}
-
-           		{{-- 	<div class="form-group row">
-           					<label for="description" class="col-sm-2">Brand</label>
-           				<select class="form-control-md" id="inputBrand" name="brand">
-           					<optgroup label="Choose Brand">
-           						@foreach($brands as $brand)
-           						<option value="{{$brand->id}}">{{$brand->name}}</option>
-           						@endforeach
-           						
-           					</optgroup>
-           				</select>
-           			</div>
- --}}
 
            			<div class="form-group row">
            				<label for="description" class="col-sm-2">category</label>
@@ -104,9 +53,8 @@
       						<button type="submit" class="btn btn-primary" >Create</button>
     					</div>
  					</div>
-
-           			
-           		</form>
+        </form>
+        
            	</div>
 
 

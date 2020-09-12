@@ -18,6 +18,10 @@
   <!-- Custom styles for this template-->
   <link href="{{ asset('backend/style/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
+
+
+  
+
 </head>
 
 <body id="page-top">
