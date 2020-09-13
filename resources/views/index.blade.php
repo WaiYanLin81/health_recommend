@@ -68,31 +68,16 @@
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
+                     @foreach($fruits as $fruit )
+                     <a href="{{ route('detailpage',$fruit->id)}}">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{asset('frondend/img/categories/cat-1.jpg')}}">
-                            <h5><a href="#">Fresh Fruit</a></h5>
+                        <div class="categories__item set-bg" data-setbg="{{asset($fruit->photo)}}" style="width: 200px;height: 150px">
+                            {{-- <h5><a href="#">Fresh Fruit</a></h5> --}}
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{asset('frondend/img/categories/cat-2.jpg')}}">
-                            <h5><a href="#">Dried Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{asset('frondend/img/categories/cat-3.jpg')}}">
-                            <h5><a href="#">Vegetables</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{asset('frondend/img/categories/cat-4.jpg')}}">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{asset('frondend/img/categories/cat-5.jpg')}}">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
+                    </a>
+                    @endforeach
+                  
                 </div>
             </div>
         </div>
@@ -272,16 +257,18 @@
                         <h4>Latest Products</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
+                                @foreach($products as $product)
                                 <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="{{asset('frondend/img/latest-product/lp-1.jpg')}}" alt="">
+                                    <div class="latest-product__item__pic" style="width: 100px;height: 100px;">
+                                        <img src="{{asset($product->photo)}}" alt="" width="100" height="100">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>{{$product->name}}</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
-                                <a href="#" class="latest-product__item">
+                                @endforeach
+                               {{--  <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{asset('frondend/img/latest-product/lp-2.jpg')}}" alt="">
                                     </div>
@@ -298,19 +285,20 @@
                                         <h6>Crab Pool Security</h6>
                                         <span>$30.00</span>
                                     </div>
-                                </a>
+                                </a> --}}
                             </div>
                             <div class="latest-prdouct__slider__item">
+                                @foreach($latests as $latest)
                                 <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="{{asset('frondend/img/latest-product/lp-1.jpg')}}" alt="">
+                                    <div class="latest-product__item__pic" style="width:100px;height: 100px">
+                                        <img src="{{asset($latest->photo)}}" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
+                                        <h6>{{$latest->name}}</h6>
                                     </div>
                                 </a>
-                                <a href="#" class="latest-product__item">
+                                @endforeach
+                              {{--   <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{asset('frondend/img/latest-product/lp-2.jpg')}}" alt="">
                                     </div>
@@ -327,7 +315,7 @@
                                         <h6>Crab Pool Security</h6>
                                         <span>$30.00</span>
                                     </div>
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
                     </div>

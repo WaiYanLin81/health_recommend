@@ -20,16 +20,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
-<<<<<<< HEAD
+
 
 Route::get('/','ShowController@indexfun')->name('index');
 Route::get('/login','ShowController@loginfun')->name('login');
 Route::get('/register','ShowController@registerfun')->name('register');
-=======
+
 Route::get('/','ShowController@indexfun')->name('index');
 Route::get('/loginpage','ShowController@loginfun')->name('loginpage');
 Route::get('/registerpage','ShowController@registerfun')->name('registerpage');
->>>>>>> 43f9a0b19863de9182fd7d6d87b1a50934ce5a6c
+Route::get('/detailpage/{id}','ShowController@detailfun')->name('detailpage');
 
 
 Route::resource('products','ProductController');
