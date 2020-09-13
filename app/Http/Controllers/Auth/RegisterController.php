@@ -53,6 +53,8 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'address' => ['required'],
+            'phone' => ['required'],
         ]);
     }
 
@@ -70,7 +72,18 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
+<<<<<<< HEAD
         $user->assignRole('Customer');
         return $user;
+=======
+
+        $user_detail = new Customer;
+        $user_detail->phoneno = $data['phone'];
+        $user_detail->address = $data['address'];
+        $user_detail->user_id = $user->id;
+
+        $user_detail->save();
+
+>>>>>>> bb8145b54abc33af465d04baa14bb779e34a4b61
     }
 }
