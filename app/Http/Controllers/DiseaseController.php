@@ -44,6 +44,7 @@ class DiseaseController extends Controller
         $request->validate([
            
             "name" => 'required',
+            "about" => 'required',
             "description" => 'required',
             "product"     => 'required|array'
          ]); 

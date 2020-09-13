@@ -18,6 +18,8 @@
   <!-- Custom styles for this template-->
   <link href="{{ asset('backend/style/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
+  <link rel="stylesheet" type="text/css" href="{{ asset('backend/style/icofont/icofont.min.css')}}">
+
 </head>
 
 <body id="page-top">
@@ -63,11 +65,15 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="">Items</a>
-            <a class="collapse-item" href="">Brands</a>
-            <a class="collapse-item" href="">Categories</a>
-            <a class="collapse-item" href="">Subcategories</a>
-             <a class="collapse-item" href="">Order List</a>
+            <a class="collapse-item " href="{{ route('products.create')}}"><i class="icofont-fruits"></i><span>Fruit and herbs</span></a>
+            <a class="collapse-item " href="{{ route('categories.create')}}"><i class="icofont-list"><span>Category</span></i></a>
+            <a class="collapse-item " href="{{ route('diseases.create')}}"><i class="icofont-drug"></i><span>Disease</span></a>
+
+            <a href="http://www.facebook.com/sharer.php?u=http://www.mywebsite.com" target="_blank">444</a>
+
+<!-- Google+ -->
+<a href="https://plus.google.com/share?url=http://www.mywebsite.com" target="_blank">6666</a>
+
           </div>
         </div>
       </li>

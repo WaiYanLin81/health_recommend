@@ -14,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return view('backend.products.index',compact('products'));
     }
 
     /**
@@ -63,7 +64,7 @@ class ProductController extends Controller
 
         $product->save();
 
-
+        return redirect()->route('products.index');
     }
 
     /**
@@ -84,8 +85,9 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Product $product)
-    {
-        //
+    {   
+        $categories = Category::all();
+        return view('backend.products.edit',compact('categories','product'));
     }
 
     /**
@@ -97,7 +99,42 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+         $request->validate([
+            
+            "name" => 'required',
+            
+            "photo" => 'sometimes',
+
+            "oldphoto" => 'required',
+
+            "benefit" => 'required',
+            
+            "category" => 'required'
+         ]);
+
+          if($request->hasFile('photo')){
+
+                $imageName = time().'.'.$request->photo->extension();
+
+                $request->photo->move(public_path('backend/productsimages'),$imageName);
+
+                $path = 'backend/productsimages/'.$imageName;
+
+
+          }else{
+
+            $path=$request->oldphoto;
+
+          }
+
+        $product->name = $request->name;
+        $product->photo = $path;
+        $product->category_id = $request->category;
+        $product->benefit =$request->benefit;
+
+        $product->save();
+
+        return redirect()->route('products.index');
     }
 
     /**
