@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+<div class="jumbotron jumbotron-fluid subtitle">
 <div class="container">
     		<h1 class="text-center text-white"> Login </h1>
   		</div>

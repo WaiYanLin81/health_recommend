@@ -1,17 +1,13 @@
 @extends('master')
 @section('content')
-<div class="jumbotron jumbotron-fluid subtitle">
-  		<div class="container">
-    		<h1 class="text-center text-white"> Create Account </h1>
-  		</div>
-	</div>
+
 	
 	<!-- Content -->
 	<div class="container my-5">
 
 		<div class="row justify-content-center">
 			<div class="col-8">
-				<form>
+				<form action="signin" method="POST">
 		      		<div class="form-row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -62,7 +58,7 @@
 		  		</form>
 
 		  		<div class=" mt-3 text-center ">
-		  			<a href="#" class="loginLink text-decoration-none">Have an account? Go to login</a>
+		  			<a href="{{ route('login') }}" class="loginLink text-decoration-none">Have an account? Go to login</a>
 		  		</div>
 			</div>
 		</div>
