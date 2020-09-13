@@ -13,16 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
 
-});
+// });
 
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
+<<<<<<< HEAD
 Route::get('/','ShowController@indexfun')->name('index');
 Route::get('/login','ShowController@loginfun')->name('login');
 Route::get('/register','ShowController@registerfun')->name('register');
+=======
+>>>>>>> 3ea7b4046a920a54e4dce9585f2e87a8f759afa4
 
 Route::resource('products','ProductController');
 Route::resource('categories','CategoryController');
