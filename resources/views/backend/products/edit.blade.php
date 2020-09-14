@@ -55,7 +55,7 @@
            				<select class="form-control-md" id="inputBrand" name="category">
            					<optgroup label="Choose Subcategory">
            						@foreach($categories as $category)
-           						<option value="{{$category->id}}" @if($category->id == $product->category_id) {{'select'}} @endif >{{$category->name}}</option>
+           						<option value="{{$category->id}}" @if($category->id == $product->category_id) {{'selected'}} @endif >{{$category->name}}</option>
            						@endforeach
            						
            					</optgroup>

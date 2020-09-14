@@ -69,10 +69,7 @@
             <a class="collapse-item " href="{{ route('categories.create')}}"><i class="icofont-list"><span>Category</span></i></a>
             <a class="collapse-item " href="{{ route('diseases.create')}}"><i class="icofont-drug"></i><span>Disease</span></a>
 
-            <a href="http://www.facebook.com/sharer.php?u=http://www.mywebsite.com" target="_blank">444</a>
-
-<!-- Google+ -->
-<a href="https://plus.google.com/share?url=http://www.mywebsite.com" target="_blank">6666</a>
+        
 
           </div>
         </div>
