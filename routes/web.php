@@ -25,10 +25,16 @@ Route::resource('diseases','DiseaseController');
 Route::resource('posts','PostController');
 });
 
+<<<<<<< HEAD
 
 
 Route::get('/blog','ShowController@blogfun')->name('blogpage');
 Route::get('/blogdetail','ShowController@blogdetailfun')->name('blogdetailpage');
+=======
+
+Route::get('/blog','ShowController@blogfun')->name('blogpage');
+
+>>>>>>> 5b6db2080b9052c2091d0fe7547df242c9dce1f6
 
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
@@ -39,6 +45,10 @@ Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5b6db2080b9052c2091d0fe7547df242c9dce1f6
 Route::get('/','ShowController@indexfun')->name('index');
 Route::get('/loginpage','ShowController@loginfun')->name('loginpage');
 Route::get('/registerpage','ShowController@registerfun')->name('registerpage');
