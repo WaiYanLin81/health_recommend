@@ -65,7 +65,7 @@
            			</div> --}}
 
                 <div class="form-group row">
-                  <label for="description"  class="col-sm-2  col-form-label">About</label>
+                  <label for="about"  class="col-sm-2  col-form-label">About</label>
                   <div class="col-sm-5">
                     <textarea class="form-control" id="about" name="about"></textarea>
                     @if ($errors->has('about'))
@@ -77,7 +77,7 @@
            			<div class="form-group row">
            				<label for="description"  class="col-sm-2  col-form-label">Description</label>
            				<div class="col-sm-5">
-           					<textarea class="form-control" id="de" name="description"></textarea>
+           					<textarea class="form-control" id="des" name="description"></textarea>
                     @if ($errors->has('description'))
                     <span class="text-danger">{{ $errors->first('description')}}</span>
                     @endif
@@ -85,16 +85,24 @@
            			</div>
 
            			<div class="form-group row">
-           					<label for="description" class="col-sm-2">Product</label>
-           				<select class="form-control-md" id="inputBrand" name="product[]" multiple ="multiple" id="product">
+           					<label for="product" class="col-sm-2">Product</label>
+           				{{-- <select class="form-control-md" id="inputBrand" name="product[]" multiple ="multiple" id="product">
            					<optgroup label="Choose Product">
            						@foreach($products as $product)
            						<option value="{{$product->id}}">{{$product->name}}</option>
            						@endforeach
            						
            					</optgroup>
-           				</select>
-           			</div>
+           				</select> --}}
+                  <div class="col-sm-5">
+                  <select class="custom-select" size="5" id="product" name="product[]" multiple="multiple" id="inputBrand">
+                    <option selected>Choose Product</option>
+                    @foreach($products as $product)
+                    <option value="{{$product->id}}">{{$product->name}}</option>
+                  @endforeach
+                  </select>
+                  </div>
+           			  </div>
 
 {{-- 
            			<div class="form-group row">

@@ -16,6 +16,8 @@ class DiseaseController extends Controller
     public function index()
     {
         //
+         $diseases = Disease::all();
+        return view('backend.diseases.index',compact('diseases'));
     }
 
     /**
@@ -52,7 +54,8 @@ class DiseaseController extends Controller
         $description=explode('/',$request->description);
         // dd($description,$request->product);
          $disease = new Disease;
-         $disease->name = $request->name;   
+         $disease->name = $request->name;
+         $disease->about = $request->about;   
          $disease->save();
          $product = $request->product;
 
@@ -109,7 +112,9 @@ class DiseaseController extends Controller
      */
     public function edit(Disease $disease)
     {
-        //
+        //By Ye Win Naing
+         return view('backend.diseases.edit',compact('disease'));
+
     }
 
     /**
@@ -121,7 +126,16 @@ class DiseaseController extends Controller
      */
     public function update(Request $request, Disease $disease)
     {
-        //
+         //By Ye Win Naing
+        $request->validate([
+            'name'=> 'required',
+            'about' => 'required',
+        ]);
+
+        $disease->name = $request->name;
+        $disease->about = $request->about;
+        $disease->save();
+        return redirect()->route('diseases.index');
     }
 
     /**
@@ -132,6 +146,8 @@ class DiseaseController extends Controller
      */
     public function destroy(Disease $disease)
     {
-        //
+        // //By Ye Win Naing
+         $disease->delete();
+        return redirect()->route('diseases.index');
     }
 }
