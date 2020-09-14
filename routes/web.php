@@ -21,10 +21,6 @@ Route::middleware('role:Admin')->group(function(){
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 });
 
-<<<<<<< HEAD
-=======
-
->>>>>>> bb8145b54abc33af465d04baa14bb779e34a4b61
 
 Route::get('/','ShowController@indexfun')->name('index');
 Route::get('/login','ShowController@loginfun')->name('login');
@@ -33,11 +29,8 @@ Route::get('/register','ShowController@registerfun')->name('register');
 Route::get('/','ShowController@indexfun')->name('index');
 Route::get('/loginpage','ShowController@loginfun')->name('loginpage');
 Route::get('/registerpage','ShowController@registerfun')->name('registerpage');
-<<<<<<< HEAD
 
-=======
 Route::get('/detailpage/{id}','ShowController@detailfun')->name('detailpage');
->>>>>>> bb8145b54abc33af465d04baa14bb779e34a4b61
 
 
 Route::resource('products','ProductController');

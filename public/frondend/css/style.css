@@ -366,7 +366,7 @@ ol {
 }
 
 .header__top__right__language ul {
-	background: #222222;
+	background: #ffffff;
 	width: 100px;
 	text-align: left;
 	padding: 5px 0;
@@ -389,8 +389,9 @@ ol {
 
 .header__top__right__language ul li a {
 	font-size: 14px;
-	color: #ffffff;
+	color: black;
 	padding: 5px 10px;
+	
 }
 
 .header__top__right__auth {

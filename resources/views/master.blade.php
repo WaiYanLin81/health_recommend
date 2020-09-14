@@ -44,17 +44,35 @@
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
-                <img src="{{asset('frondend/img/language.png')}}" alt="">
-                <div>English</div>
+                {{-- <img src="{{asset('frondend/img/language.png')}}" alt=""> --}}
+                @guest
+                <div>Login</div>
+                @else
+                <div class="text-uppercase">{{Auth::user()->name}}</div>
                 <span class="arrow_carrot-down"></span>
                 <ul>
-                    <li><a href="#">Spanis</a></li>
-                    <li><a href="#">English</a></li>
+                    <li>  <a class="dropdown-item btn_logout"  href="{{ route('logout') }}"
+                         onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                          {{ __('Logout') }}
+                      </a>
+                       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                          @csrf
+                      </form>
+                    </li>
                 </ul>
+                @endguest
             </div>
-            <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
-            </div>
+
+        
+           {{--  <div class="header__top__right__auth">
+                <a href=""><i class="fa fa-user"></i>Login</a>
+            </div> --}}
+        
+
+             
+
+
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
@@ -81,8 +99,8 @@
         </div>
         <div class="humberger__menu__contact">
             <ul>
-                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                <li>Free Shipping for all Order of $99</li>
+                <li><i class="fa fa-envelope"></i> hello@Heathcare.com</li>
+                <li>Well Come</li>
             </ul>
         </div>
     </div>
@@ -96,8 +114,8 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                <li>Free Shipping for all Order of $99</li>
+                                <li><i class="fa fa-envelope"></i>hello@Healthcare.com</li>
+                                <li>Well Come</li>
                             </ul>
                         </div>
                     </div>
@@ -110,17 +128,28 @@
                                 <a href="#"><i class="fa fa-pinterest-p"></i></a>
                             </div>
                             <div class="header__top__right__language">
-                                <img src="{{asset('frondend/img/language.png')}}" alt="">
-                                <div>English</div>
-                                <span class="arrow_carrot-down"></span>
-                                <ul>
-                                    <li><a href="#">Spanis</a></li>
-                                    <li><a href="#">English</a></li>
-                                </ul>
+                               @guest
+
+                               <div class="text-uppercase"><a href="{{ route('loginpage') }}" class="text-dark">Login</a></div>
+                               @else
+                               <div>{{Auth::user()->name}}</div>
+                               <span class="arrow_carrot-down"></span>
+                               <ul>
+                                <li>  <a class="dropdown-item btn_logout "  href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                                   {{ __('Logout') }}
+                               </a>
+                               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                  @csrf
+                              </form>
+                          </li>
+                      </ul>
+                      @endguest
                             </div>
-                            <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
-                            </div>
+                           {{--  <div class="header__top__right__auth">
+                                <a href="#"><i class="fa fa-user"></i></a>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -153,11 +182,11 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="header__cart">
-                        <ul>
+                        {{-- <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-                        </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                        </ul> --}}
+                        {{-- <div class="header__cart__price">item: <span>$150.00</span></div> --}}
                     </div>
                 </div>
             </div>
