@@ -21,14 +21,8 @@ Route::middleware('role:Admin')->group(function(){
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 });
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 74450e4d9a3061d2d9231983d162f6a571a25ae9
-Route::get('/','ShowController@indexfun')->name('index');
-Route::get('/login','ShowController@loginfun')->name('login');
-Route::get('/register','ShowController@registerfun')->name('register');
-
+Route::get('/blog','ShowController@blogfun')->name('blogpage');
 Route::get('/','ShowController@indexfun')->name('index');
 Route::get('/loginpage','ShowController@loginfun')->name('loginpage');
 Route::get('/registerpage','ShowController@registerfun')->name('registerpage');
@@ -39,6 +33,7 @@ Route::get('/detailpage/{id}','ShowController@detailfun')->name('detailpage');
 Route::resource('products','ProductController');
 Route::resource('categories','CategoryController');
 Route::resource('diseases','DiseaseController');
+Route::resource('posts','PostController');
 
 
 Auth::routes();

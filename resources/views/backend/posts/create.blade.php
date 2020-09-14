@@ -11,17 +11,17 @@
            	</div>
            </div>
        </div>
-           		<form action="{{ route('products.store')}}" method="post" enctype="multipart/form-data">
+           		<form action="{{ route('posts.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
 
            			
          
            			<div class="form-group row">
-           				<label for="name" class="col-sm-2 col-form-label">Name</label>
+           				<label for="name" class="col-sm-2 col-form-label">Title</label>
            				<div class="col-sm-5">
-           					<input type="text" class="form-control" id="name" name="name">
-                    @if ($errors->has('name'))
-                    <span class="text-danger">{{ $errors->first('name')}}</span>
+           					<input type="text" class="form-control" id="title" name="title">
+                    @if ($errors->has('title'))
+                    <span class="text-danger">{{ $errors->first('title')}}</span>
                     @endif
            				</div>
            			</div>
@@ -31,32 +31,25 @@
            				<label for="photo" class="col-sm-2 col-form-label">Photo</label>
            				<div class="col-sm-5">
            					<input type="file"  id="photo" name="photo">
+                     @if ($errors->has('photo'))
+                    <span class="text-danger">{{ $errors->first('photo')}}</span>
+                    @endif
            				</div>
            			</div>
 
 
                   <div class="form-group row">
-                  <label for="description"  class="col-sm-2  col-form-label">Benefit</label>
+                  <label for="description"  class="col-sm-2  col-form-label">Description</label>
                   <div class="col-sm-5">
-                    <textarea class="form-control" id="de" name="benefit"></textarea>
+                    <textarea class="form-control" id="de" name="description"></textarea>
                     @if ($errors->has('description'))
-                    <span class="text-danger">{{ $errors->first('benefit')}}</span>
+                    <span class="text-danger">{{ $errors->first('description')}}</span>
                     @endif
                   </div>
                 </div>
 
 
-           			<div class="form-group row">
-           				<label for="description" class="col-sm-2">category</label>
-           				<select class="form-control-md" id="inputBrand" name="category">
-           					<optgroup label="Choose Subcategory">
-           						@foreach($categories as $category)
-           						<option value="{{$category->id}}">{{$category->name}}</option>
-           						@endforeach
-           						
-           					</optgroup>
-           				</select>
-           			</div>
+           			
 
 
            <div class="form-group row">

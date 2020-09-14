@@ -21,6 +21,12 @@
     <link rel="stylesheet" href="{{asset('frondend/css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('frondend/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('frondend/css/style.css')}}" type="text/css">
+
+
+
+    
+    
+
 </head>
 
 <body>
