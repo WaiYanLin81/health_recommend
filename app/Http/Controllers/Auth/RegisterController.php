@@ -72,10 +72,10 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-<<<<<<< HEAD
+
         $user->assignRole('Customer');
         return $user;
-=======
+
 
         $user_detail = new Customer;
         $user_detail->phoneno = $data['phone'];
@@ -84,6 +84,5 @@ class RegisterController extends Controller
 
         $user_detail->save();
 
->>>>>>> bb8145b54abc33af465d04baa14bb779e34a4b61
     }
 }
