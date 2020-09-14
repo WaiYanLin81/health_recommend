@@ -2,5 +2,5 @@
 
 @section('content')
 
-{{$product->benefit}}
+<p>{!!$product->benefit !!}</p>
 @endsection

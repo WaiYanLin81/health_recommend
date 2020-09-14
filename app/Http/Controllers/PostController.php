@@ -110,7 +110,7 @@ class PostController extends Controller
 
                 $imageName = time().'.'.$request->photo->extension();
 
-                $request->photo->move(public_path('backend/postimgs'),$imageName);
+                $request->photo->move(public_path('backend/postsimgs'),$imageName);
 
                 $path = 'backend/postsimgs/'.$imageName;
 

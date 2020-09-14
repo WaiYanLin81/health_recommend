@@ -38,17 +38,22 @@
                   <div class="form-group row">
                   <label for="description"  class="col-sm-2  col-form-label">Benefit</label>
                   <div class="col-sm-5">
-                    <textarea class="form-control" id="de" name="benefit"></textarea>
+                    <textarea class="form-control benefit" id="" name="benefit"></textarea>
                     @if ($errors->has('description'))
                     <span class="text-danger">{{ $errors->first('benefit')}}</span>
                     @endif
                   </div>
+                  {{-- <script type="text/javascript">
+                    $(document).ready(function() {
+                          $('#summernote').summernote();
+                      });
+                  </script> --}}
                 </div>
 
 
            			<div class="form-group row">
            				<label for="description" class="col-sm-2">category</label>
-           				<select class="form-control-md" id="inputBrand" name="category">
+           				<select class="form-control-md summernote" id="inputBrand" name="category">
            					<optgroup label="Choose Subcategory">
            						@foreach($categories as $category)
            						<option value="{{$category->id}}">{{$category->name}}</option>

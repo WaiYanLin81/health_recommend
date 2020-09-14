@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Post;
 
 class ShowController extends Controller
 {
@@ -27,6 +28,12 @@ class ShowController extends Controller
 
     public function blogfun()
     {
-        return view('blog');
+        $post = Post::all();
+        return view('blog',compact('post'));
+    }
+
+    public function blogdetailfun()
+    {
+        return view('blogdetail');
     }
 }
