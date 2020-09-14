@@ -84,9 +84,6 @@ class RegisterController extends Controller
 
         $user_detail->save();
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 74450e4d9a3061d2d9231983d162f6a571a25ae9
     }
 }

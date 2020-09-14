@@ -24,4 +24,9 @@ class ShowController extends Controller
     	$product = Product::find($id);
     	return view('productdetail',compact('product'));
     }
+
+    public function blogfun()
+    {
+        return view('blog');
+    }
 }
