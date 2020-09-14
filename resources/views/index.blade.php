@@ -75,6 +75,7 @@
                         <div class="categories__item set-bg" data-setbg="{{asset($fruit->photo)}}" style="width: 200px;height: 150px">
                             {{-- <h5><a href="#">Fresh Fruit</a></h5> --}}
                         </div>
+                        <div id="summernote"><p>Hello Summernote</p></div>
                     </div>
                     </a>
                     @endforeach
