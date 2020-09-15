@@ -1,12 +1,12 @@
 @extends('master')
 @section('content')
-    <!-- Header Section End -->
+   <!-- Header Section End -->
 
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="container">
             <div class="row">
-            {{--     <div class="col-lg-3">
+                <div class="col-lg-3">
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
@@ -26,10 +26,10 @@
                             <li><a href="#">Papayaya & Crisps</a></li>
                             <li><a href="#">Oatmeal</a></li>
                             <li><a href="#">Fresh Bananas</a></li>
-                        </ul
-                    </div>>
+                        </ul>
+                    </div>
 
-                </div> --}}
+                </div>
                 <div class="col-lg-12">
                     <div class="hero__search">
                         <div class="hero__search__form">
@@ -505,7 +505,7 @@
                             <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
                         </div>
                     </div>
-                </div>
+                {{-- </div> --}}
                 @endforeach
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
@@ -541,4 +541,5 @@
         </div>
     </section>
     <!-- Blog Section End -->
+<h1>Secong</h1>
 @endsection

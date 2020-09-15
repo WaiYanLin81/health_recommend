@@ -74,3 +74,6 @@ Route::get('/fruitspage/{id}','ShowController@fruitsfun')->name('fruitspage');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Example route
+Route::get('testing','TestController@testfun')->('testpage');
