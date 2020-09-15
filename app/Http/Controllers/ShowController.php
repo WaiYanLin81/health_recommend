@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Post;
+use App\Category;
 
 class ShowController extends Controller
 {
@@ -12,7 +13,9 @@ class ShowController extends Controller
     	$fruits = Product::where('category_id',1)->orderBy('id','ASC')->get();
     	$products = Product::latest()->paginate(3);
     	$latests = Product::latest()->paginate(3);
-        return view('index',compact('fruits','products','latests'));
+        $posts = Post::latest()->paginate(3);
+        $categories = Category::all();
+        return view('index',compact('fruits','products','latests','posts','categories'));
     }
     function loginfun (){
         return view('login');

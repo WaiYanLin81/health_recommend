@@ -10,6 +10,7 @@
            		 <h1 class="h3 mb-0 text-gray-800">Products Edit Form</h1>
            	</div>
            </div>
+           
        </div>
            		<form action="{{ route('products.update',$product->id)}}" method="post" enctype="multipart/form-data">
                 @csrf

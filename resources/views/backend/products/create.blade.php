@@ -18,7 +18,7 @@
          
            			<div class="form-group row">
            				<label for="name" class="col-sm-2 col-form-label">Name</label>
-           				<div class="col-sm-5">
+           				<div class="col-sm-6">
            					<input type="text" class="form-control" id="name" name="name">
                     @if ($errors->has('name'))
                     <span class="text-danger">{{ $errors->first('name')}}</span>
@@ -29,7 +29,7 @@
 
            			<div class="form-group row">
            				<label for="photo" class="col-sm-2 col-form-label">Photo</label>
-           				<div class="col-sm-5">
+           				<div class="col-sm-6">
            					<input type="file"  id="photo" name="photo">
            				</div>
            			</div>
@@ -37,9 +37,9 @@
 
                   <div class="form-group row">
                   <label for="description"  class="col-sm-2  col-form-label">Benefit</label>
-                  <div class="col-sm-5">
+                  <div class="col-sm-6">
                     <textarea class="form-control benefit" id="" name="benefit"></textarea>
-                    @if ($errors->has('description'))
+                    @if ($errors->has('benefit'))
                     <span class="text-danger">{{ $errors->first('benefit')}}</span>
                     @endif
                   </div>
@@ -65,7 +65,7 @@
 
 
            <div class="form-group row">
-    					<div class="col-sm-5">
+    					<div class="col-sm-12">
       						<button type="submit" class="btn btn-primary" >Create</button>
     					</div>
  					</div>
