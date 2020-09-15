@@ -15,13 +15,12 @@
        </div>
 
        				<div class="row">
-       					<div class="col-md-12">
+       					<div class="col-sm-12">
        						<table class="table table-bordered">
        							<thead class="thead-dark">
-       							<tr>
+       							<tr class="text-center">
        								<th>No</th>
 	       							<th>Name</th>
-	       							<th>Photo</th>
 	       							<th>Action</th>
        							</tr>
        							</thead>
@@ -29,10 +28,10 @@
 
        								@php $i=1; @endphp
        								@foreach($products as $product)
-       								<tr>
+       								<tr class="text-center">
        									<td>{{$i++}}</td>
        									<td>{{ $product->name}}</td>
-       									<td><img src="{{ asset($product->photo)}}" class="img-fluid " width="200" height="150"> </td>
+       									
        									
        									<td>
        									<a href="{{route('products.show',$product->id)}}" class="btn btn-outline-primary"><i class="fas fa-info"></i></a>&nbsp;&nbsp;

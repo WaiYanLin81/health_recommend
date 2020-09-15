@@ -17,15 +17,20 @@ class ShowController extends Controller
         $categories = Category::all();
         return view('index',compact('fruits','products','latests','posts','categories'));
     }
-    function loginfun (){
+
+    function loginfun ()
+    {
         return view('login');
     }
-    function registerfun (){
+
+    function registerfun ()
+    {
         return view('register');
     }
 
-    public function detailfun($id){
-    	$product = Product::find($id);
+    public function productdetailfun($id)
+    {
+        $product = Product::find($id);
     	return view('productdetail',compact('product'));
     }
 
@@ -38,5 +43,12 @@ class ShowController extends Controller
     public function blogdetailfun()
     {
         return view('blogdetail');
+    }
+
+    public function fruitsfun($id)
+    {
+        $category = Category::find($id);
+        $product = Product::all();
+        return view('fruits',compact('category','product'));
     }
 }
