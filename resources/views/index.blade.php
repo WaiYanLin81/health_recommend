@@ -81,14 +81,19 @@
                 </div>
                 <div class="categories__slider owl-carousel">
 
+
                      @foreach($fruits as $fruit )
                      <a href="{{ route('productdetailpage',$fruit->id)}}">
 
                      @foreach($products as $product )
                      <a href="{{ route('detailpage',$product->id)}}">
 
+
+                     @foreach($fruits as $fruit )
+                     <a href="{{ route('productdetailpage',$fruit->id)}}">
+
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{asset($product->photo)}}" style="width: 200px;height: 150px">
+                        <div class="categories__item set-bg" data-setbg="{{asset($fruit->photo)}}" style="width: 200px;height: 150px">
                             {{-- <h5><a href="#">Fresh Fruit</a></h5> --}}
                         </div>
                         
@@ -101,6 +106,7 @@
         </div>
     </section>
     <!-- Categories Section End -->
+
 
 
     <!-- Featured Section Begin -->
@@ -470,6 +476,7 @@
         </div>
     </section>
     <!-- Latest Product Section End -->
+
 
 
     <!-- Blog Section Begin -->
