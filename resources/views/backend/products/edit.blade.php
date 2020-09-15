@@ -10,6 +10,7 @@
            		 <h1 class="h3 mb-0 text-gray-800">Products Edit Form</h1>
            	</div>
            </div>
+           
        </div>
            		<form action="{{ route('products.update',$product->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -42,7 +43,7 @@
                   <div class="form-group row">
                   <label for="description"  class="col-sm-2  col-form-label">Benefit</label>
                   <div class="col-sm-5">
-                    <textarea class="form-control" id="de" name="benefit">{{$product->benefit}}</textarea>
+                    <textarea class="form-control benefit" id="de" name="benefit">{{$product->benefit}}</textarea>
                     @if ($errors->has('benefit'))
                     <span class="text-danger">{{ $errors->first('benefit')}}</span>
                     @endif

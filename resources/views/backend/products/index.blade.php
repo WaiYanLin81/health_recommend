@@ -11,6 +11,7 @@
            		 <h1 class="h3 mb-0 text-gray-800">Products List Form</h1>
            	</div>
            </div>
+           <a href="{{ route('products.create')}}" class="btn btn-primary">Add New</a>
        </div>
 
        				<div class="row">

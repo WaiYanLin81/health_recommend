@@ -6,14 +6,16 @@
     <section class="hero">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+            {{--     <div class="col-lg-3">
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
                             <span>All departments</span>
                         </div>
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
+                            @foreach($categories as $category)
+                            <li><a href="#" style="text-decoration: none">{{$category->name}}</a></li>
+                            @endforeach
                             <li><a href="#">Vegetables</a></li>
                             <li><a href="#">Fruit & Nut Gifts</a></li>
                             <li><a href="#">Fresh Berries</a></li>
@@ -24,16 +26,20 @@
                             <li><a href="#">Papayaya & Crisps</a></li>
                             <li><a href="#">Oatmeal</a></li>
                             <li><a href="#">Fresh Bananas</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9">
+                        </ul
+                    </div>>
+
+                </div> --}}
+                <div class="col-lg-12">
                     <div class="hero__search">
                         <div class="hero__search__form">
                             <form action="#">
                                 {{-- <div class="hero__search__categories">
                                     All Categories
                                     <span class="arrow_carrot-down"></span>
+                                    <ul>
+                                        <li>helo</li>
+                                    </ul>
                                     
                                 </div> --}}
                                 <input type="text" placeholder="What do yo u need?">
@@ -68,6 +74,11 @@
     <section class="categories">
         <div class="container">
             <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title from-blog__title">
+                        <h2>Fruit For Health</h2>
+                    </div>
+                </div>
                 <div class="categories__slider owl-carousel">
                      @foreach($fruits as $fruit )
                      <a href="{{ route('detailpage',$fruit->id)}}">
@@ -75,6 +86,7 @@
                         <div class="categories__item set-bg" data-setbg="{{asset($fruit->photo)}}" style="width: 200px;height: 150px">
                             {{-- <h5><a href="#">Fresh Fruit</a></h5> --}}
                         </div>
+                        
                     </div>
                     </a>
                     @endforeach
@@ -84,6 +96,7 @@
         </div>
     </section>
     <!-- Categories Section End -->
+
 
     <!-- Featured Section Begin -->
     <section class="featured spad">
@@ -456,6 +469,7 @@
     </section>
     <!-- Latest Product Section End -->
 
+
     <!-- Blog Section Begin -->
     <section class="from-blog spad">
         <div class="container">
@@ -467,22 +481,24 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($posts as $post)
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="{{asset('frondend/img/blog/blog-1.jpg')}}" alt="">
+                            <img src="{{asset($post->photo)}}" alt="" width="300" height="200">
                         </div>
                         <div class="blog__item__text">
                             <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                <li><i class="fa fa-calendar-o"></i> &nbsp;{{$post->created_at}}</li>
                                 <li><i class="fa fa-comment-o"></i> 5</li>
                             </ul>
-                            <h5><a href="#">Cooking tips make cooking simple</a></h5>
+                            <h5><a href="#">{{$post->title}}</a></h5>
                             <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                @endforeach
+                {{-- <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
                             <img src="{{asset('frondend/img/blog/blog-2.jpg')}}" alt="">
@@ -511,7 +527,7 @@
                             <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

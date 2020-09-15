@@ -21,6 +21,7 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('backend/style/icofont/icofont.min.css')}}">
 
 
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
   
 
@@ -402,6 +403,17 @@
   <script src="{{ asset('backend/style/js/demo/chart-area-demo.js')}}"></script>
   <script src="{{ asset('backend/style/js/demo/chart-pie-demo.js')}}"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+  $('.benefit').summernote();
+
+    
+
+});
+  </script>
+  
 </body>
 
 </html>

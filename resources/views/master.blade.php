@@ -21,7 +21,14 @@
     <link rel="stylesheet" href="{{asset('frondend/css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('frondend/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('frondend/css/style.css')}}" type="text/css">
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 
     
@@ -168,20 +175,22 @@
                         <a href="./index.html"><img src="{{asset('frondend/img/logo.png')}}" alt=""></a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6"  >
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop-grid.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
+                            {{-- <li><a href="./shop-grid.html">Shop</a></li> --}}
+                            <li><a href="#">Category</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                                    @foreach($categories as $category)
+                                    <li><a href="./shop-details.html">{{$category->name}}</a></li>
+                                    @endforeach
+                                   {{--  <li><a href="./shoping-cart.html">Shoping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    <li><a href="./blog-details.html">Blog Details</a></li> --}}
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="{{-- {{ route('blogpage') }} --}}">Blog</a></li>
                             <li><a href="./contact.html">Contact</a></li>
                         </ul>
                     </nav>
@@ -280,7 +289,11 @@
     <script src="{{asset('frondend/js/mixitup.min.js')}}"></script>
     <script src="{{asset('frondend/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('frondend/js/main.js')}}"></script>
-
+    <script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
+  </script>
 
 
 </body>
