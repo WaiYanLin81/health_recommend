@@ -28,6 +28,7 @@ class ProductController extends Controller
     {   
         $categories = Category::all();
         return view('backend.products.create',compact('categories'));
+        
     }
 
     /**

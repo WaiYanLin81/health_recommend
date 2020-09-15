@@ -34,6 +34,7 @@
        									<td><img src="{{ asset($product->photo)}}" class="img-fluid " width="200" height="150"> </td>
        									
        									<td>
+                          
        									<a href="{{route('products.show',$product->id)}}" class="btn btn-outline-primary"><i class="fas fa-info"></i></a>&nbsp;&nbsp;
                         <a href="{{ route('products.edit',$product->id) }}" class="btn btn-outline-warning"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;
        									<form action="{{route('products.destroy',$product->id)}}" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure to Delete?')">

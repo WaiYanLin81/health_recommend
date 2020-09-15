@@ -290,7 +290,7 @@
                             </div>
                             <div class="latest-prdouct__slider__item">
                                 @foreach($latests as $latest)
-                                <a href="#" class="latest-product__item">
+                                <a href="" class="latest-product__item">
                                     <div class="latest-product__item__pic" style="width:100px;height: 100px">
                                         <img src="{{asset($latest->photo)}}" alt="">
                                     </div>
