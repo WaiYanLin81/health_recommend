@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Post;
 use App\Category;
+use App\Disease;
 
 class ShowController extends Controller
 {
@@ -50,5 +51,19 @@ class ShowController extends Controller
         $category = Category::find($id);
         $product = Product::all();
         return view('fruits',compact('category','product'));
+    }
+
+    public function diseasefun(Request $request)
+
+    {    
+        $search = $request->search;
+        if($request->search)
+        {
+            $disease = Disease::where('name','LIKE','%'.$search.'%')->get();
+        }else{
+
+        $disease = Disease::all(); 
+        } 
+        return view('disease.disease',compact('disease'));
     }
 }

@@ -185,6 +185,7 @@
                             </li>
                             <li><a href="{{-- {{ route('blogpage') }} --}}">Blog</a></li>
                             <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="{{ route('diseasepage') }}">Disease</a></li>
                         </ul>
                     </nav>
                 </div>

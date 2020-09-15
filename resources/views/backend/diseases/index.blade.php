@@ -17,7 +17,7 @@
     				<tr>
     					<th>No</th>
     					<th>Name</th>
-                        <th>About</th>
+                        {{-- <th>About</th> --}}
                        
     					<th>Actions</th>
     				</tr>
@@ -31,7 +31,7 @@
                         <td>{{$disease->name}}</td>            
                         {{-- <td><img src="{{$brand->photo}}" class="rounded circle" width="150px" height="120px"></td>            
                         <td> --}}
-                            <td>{{$disease->about}}</td>
+                           {{--  <td>{{$disease->about}}</td> --}}
                             
                             <td>
                             <a href="{{-- {{route('categories.edit',$category->id)}} --}}" class="btn btn-outline-primary"><i class="fas fa-info"></i></a>&nbsp;&nbsp;

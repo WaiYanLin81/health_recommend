@@ -8,7 +8,7 @@ class Disease extends Model
 {
 
 	 protected $fillable= [
-    	'name','about'
+    	'name','photo','about'
     ];
     	public function products()
     	{
