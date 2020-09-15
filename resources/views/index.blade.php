@@ -80,10 +80,10 @@
                     </div>
                 </div>
                 <div class="categories__slider owl-carousel">
-                     @foreach($fruits as $fruit )
-                     <a href="{{ route('detailpage',$fruit->id)}}">
+                     @foreach($products as $product )
+                     <a href="{{ route('detailpage',$product->id)}}">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{asset($fruit->photo)}}" style="width: 200px;height: 150px">
+                        <div class="categories__item set-bg" data-setbg="{{asset($product->photo)}}" style="width: 200px;height: 150px">
                             {{-- <h5><a href="#">Fresh Fruit</a></h5> --}}
                         </div>
                         
