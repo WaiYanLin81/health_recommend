@@ -79,6 +79,9 @@ class DiseaseController extends Controller
             $disease->products()->attach($array);
              }
 
+
+            
+
                        
                      
                 

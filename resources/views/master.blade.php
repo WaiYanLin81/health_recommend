@@ -178,12 +178,12 @@
                 <div class="col-lg-6"  >
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li class="active"><a href="{{ route('index') }}">Home</a></li>
                             {{-- <li><a href="./shop-grid.html">Shop</a></li> --}}
                             <li><a href="#">Category</a>
                                 <ul class="header__menu__dropdown">
                                     @foreach($categories as $category)
-                                    <li><a href="./shop-details.html">{{$category->name}}</a></li>
+                                    <li><a href="{{ route('fruitspage',$category->id) }}">{{$category->name}}</a></li>
                                     @endforeach
                                    {{--  <li><a href="./shoping-cart.html">Shoping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>

@@ -80,8 +80,13 @@
                     </div>
                 </div>
                 <div class="categories__slider owl-carousel">
+<<<<<<< HEAD
+                     @foreach($fruits as $fruit )
+                     <a href="{{ route('productdetailpage',$fruit->id)}}">
+=======
                      @foreach($products as $product )
                      <a href="{{ route('detailpage',$product->id)}}">
+>>>>>>> 46a4c9bc073e1543da2fa42d64b156b9f535cbd3
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="{{asset($product->photo)}}" style="width: 200px;height: 150px">
                             {{-- <h5><a href="#">Fresh Fruit</a></h5> --}}

@@ -43,7 +43,7 @@ Route::get('/blog','ShowController@blogfun')->name('blogpage');
 Route::get('/blogdetail','ShowController@blogdetailfun')->name('blogdetailpage');
 
 
-Route::get('/blog','ShowController@blogfun')->name('blogpage');
+// Route::get('/blog','ShowController@blogfun')->name('blogpage');
 
 
 
@@ -59,14 +59,17 @@ Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 46a4c9bc073e1543da2fa42d64b156b9f535cbd3
 Route::get('/','ShowController@indexfun')->name('index');
+
 Route::get('/loginpage','ShowController@loginfun')->name('loginpage');
 Route::get('/registerpage','ShowController@registerfun')->name('registerpage');
 
-Route::get('/detailpage/{id}','ShowController@detailfun')->name('detailpage');
-
-
+Route::get('/detailpage/{id}','ShowController@productdetailfun')->name('productdetailpage');
+Route::get('/fruitspage/{id}','ShowController@fruitsfun')->name('fruitspage');
 
 
 
@@ -74,5 +77,3 @@ Route::get('/detailpage/{id}','ShowController@detailfun')->name('detailpage');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-

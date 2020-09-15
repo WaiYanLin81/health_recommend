@@ -89,8 +89,9 @@
                 </div>
                 <div class="col-lg-8 col-md-7">
                     <div class="row">
+                         @foreach($post as $post)
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            @foreach($post as $post)
+                           
                             <div class="blog__item">
                                 <div class="blog__item__pic">
                                     <img src="{{ asset($post->photo) }}" alt="" width="300" height="250">
@@ -107,9 +108,10 @@
                                     <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
                                 </div>
                             </div>
-                            @endforeach
-                       {{--  </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            
+                        </div>
+                        @endforeach
+   {{--                      <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="blog__item">
                                 <div class="blog__item__pic">
                                     <img src="{{ asset('frondend/img/blog/blog-3.jpg')}}" alt="">
