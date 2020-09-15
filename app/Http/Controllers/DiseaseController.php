@@ -31,6 +31,7 @@ class DiseaseController extends Controller
         
         $products = Product::all();
         return view('backend.diseases.create',compact('products'));
+
     }
 
     /**
@@ -87,7 +88,7 @@ class DiseaseController extends Controller
                  
 
              
-      
+       return redirect()->route('diseases.create');
            
             
             
