@@ -47,15 +47,24 @@ class DiseaseController extends Controller
         $request->validate([
            
             "name" => 'required',
+            "photo" => 'required',
             "about" => 'required',
             "description" => 'required',
-            "product"     => 'required|array'
+            "product"     => 'nullable|array'
          ]); 
+
+         $imageName = time().'.'.$request->photo->extension();
+
+        $request->photo->move(public_path('backend/diseaseimg'),$imageName);
+
+        $path = 'backend/diseaseimg/'.$imageName;
+
 
         $description=explode('/',$request->description);
         // dd($description,$request->product);
          $disease = new Disease;
          $disease->name = $request->name;
+         $disease->photo = $path;
          $disease->about = $request->about;   
          $disease->save();
          $product = $request->product;

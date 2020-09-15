@@ -36,13 +36,13 @@
            				</div>
            			</div>
 
-{{-- 
+
            			<div class="form-group row">
            				<label for="photo" class="col-sm-2 col-form-label">Photo</label>
            				<div class="col-sm-5">
            					<input type="file"  id="photo" name="photo">
            				</div>
-           			</div> --}}
+           			</div>
 {{-- 
            			<div class="form-group row">
            				<label for="price" class="col-sm-2 col-form-label">Price</label>
