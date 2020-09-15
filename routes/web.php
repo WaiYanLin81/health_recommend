@@ -76,4 +76,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Example route
-Route::get('testing','TestController@testfun')->('testpage');
+Route::get('testing','TestController@testfun')->name('testpage');
