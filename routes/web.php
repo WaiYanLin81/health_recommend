@@ -59,10 +59,7 @@ Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 46a4c9bc073e1543da2fa42d64b156b9f535cbd3
 Route::get('/','ShowController@indexfun')->name('index');
 
 Route::get('/loginpage','ShowController@loginfun')->name('loginpage');
