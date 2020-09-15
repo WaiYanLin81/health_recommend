@@ -80,13 +80,13 @@
                     </div>
                 </div>
                 <div class="categories__slider owl-carousel">
-<<<<<<< HEAD
+
                      @foreach($fruits as $fruit )
                      <a href="{{ route('productdetailpage',$fruit->id)}}">
-=======
+
                      @foreach($products as $product )
                      <a href="{{ route('detailpage',$product->id)}}">
->>>>>>> 46a4c9bc073e1543da2fa42d64b156b9f535cbd3
+
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="{{asset($product->photo)}}" style="width: 200px;height: 150px">
                             {{-- <h5><a href="#">Fresh Fruit</a></h5> --}}
@@ -287,7 +287,7 @@
                                     </div>
                                 </a>
                                 @endforeach
-                               {{--  <a href="#" class="latest-product__item">
+                                <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{asset('frondend/img/latest-product/lp-2.jpg')}}" alt="">
                                     </div>
@@ -304,7 +304,7 @@
                                         <h6>Crab Pool Security</h6>
                                         <span>$30.00</span>
                                     </div>
-                                </a> --}}
+                                </a>
                             </div>
                             <div class="latest-prdouct__slider__item">
                                 @foreach($latests as $latest)
@@ -317,7 +317,7 @@
                                     </div>
                                 </a>
                                 @endforeach
-                              {{--   <a href="#" class="latest-product__item">
+                                <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{asset('frondend/img/latest-product/lp-2.jpg')}}" alt="">
                                     </div>
@@ -334,7 +334,7 @@
                                         <h6>Crab Pool Security</h6>
                                         <span>$30.00</span>
                                     </div>
-                                </a> --}}
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -442,10 +442,7 @@
                                     <div class="latest-product__item__pic">
                                         <img src="{{asset('frondend/img/latest-product/lp-1.jpg')}}" alt="">
                                     </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
+                                    
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
@@ -503,19 +500,19 @@
                     </div>
                 </div>
                 @endforeach
-                {{-- <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
                             <img src="{{asset('frondend/img/blog/blog-2.jpg')}}" alt="">
                         </div>
-                        <div class="blog__item__text">
+                       {{--  <div class="blog__item__text">
                             <ul>
                                 <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
                                 <li><i class="fa fa-comment-o"></i> 5</li>
                             </ul>
                             <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
                             <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
@@ -532,7 +529,7 @@
                             <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
                         </div>
                     </div>
-                </div> --}}
+                </div>
             </div>
         </div>
     </section>
