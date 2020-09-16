@@ -27,7 +27,7 @@
               
               <div class="form-group">
                 <label class="small mb-1" for="inputPassword">Password</label>
-                <input class="form-control py-4 @error('password') is-invalid @enderror"  value="{{ old('password') }}" id="inputPassword" type="password" placeholder="Enter password" name="password" />
+                <input class="form-control  py-4 @error('password') is-invalid @enderror"  value="{{ old('password') }}" id="inputPassword" type="password" placeholder="Enter password" name="password" />
                  @error('password')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -43,24 +43,41 @@
 
                   </div>
 
-                  <a class="small" href="#">Forgot Password?</a>
+                  <a class="small text-decoration-none text-dark" href="#">Forgot Password?</a>
 
               </div>
               
               <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                 
-                <button type="submit" class="btn btn-secondary mainfullbtncolor btn-block">Login</button>
+                <button type="submit" class="btn  mainfullbtncolor btn-block login___btn" >Login</button>
               </div>
 
 
           </form>
 
-          <div class=" mt-3 text-center ">
-            <a href="{{route('registerpage')}}" class="loginLink text-decoration-none">Need an account? Sign Up!</a>
+          <div class=" mt-3 text-center sign_up">
+            <a href="{{route('registerpage')}}" class="loginLink text-decoration-none " style="">Need an account? Sign Up!</a>
           </div>
       </div>
     </div>
+  </div>
+<style >
+.sign_up a:hover{
 
+  color:#A0EA1D;
+
+}
+
+.sign_up a{
+  color:black;
+}
+
+.login___btn{
+  color:black;
+  background: #A0EA1D;
+}
+  
+</style>
 
 
 

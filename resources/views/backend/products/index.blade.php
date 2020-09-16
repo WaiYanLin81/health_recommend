@@ -11,8 +11,20 @@
            		 <h1 class="h3 mb-0 text-gray-800">Products List Form</h1>
            	</div>
            </div>
+           <div class="header">
            <a href="{{ route('products.create')}}" class="btn btn-primary">Add New</a>
+         </div>
+           
        </div>
+
+            <br><div class="input-group col-12">
+            <form  class="form-inline" action="{{ route('products.index') }}" method="get">
+                 <input class="form-control bg-light pl-4 border-right-0 border" type="search" placeholder="Search" name="search" id="">
+                              
+                 <button class="btn  my-2 my-sm-0 btn-primary" type="submit"><i class="fa fa fa-search"></i></button>
+            </form>
+        </div><br>
+
 
        				<div class="row">
        					<div class="col-sm-12">
@@ -28,12 +40,12 @@
 
        								@php $i=1; @endphp
        								@foreach($products as $product)
-       								<tr class="text-center">
+       								<tr class="">
        									<td>{{$i++}}</td>
        									<td>{{ $product->name}}</td>
        									
        									
-       									<td>
+       									<td class="text-center">
                           
        									<a href="{{route('products.show',$product->id)}}" class="btn btn-outline-primary"><i class="fas fa-info"></i></a>&nbsp;&nbsp;
                         <a href="{{ route('products.edit',$product->id) }}" class="btn btn-outline-warning"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;
@@ -42,7 +54,9 @@
                                 @method('DELETE')
                                 <!-- delete lote yin method ka post nat ma ya buu dar kout method ko delete so pe change pay ya mal update lo myoe pot -->
                                 <button class="btn btn-outline-danger "><i class="fas fa-trash"></i></button>
+
                             </form>
+                          </td>
 
        								</tr>
        								@endforeach

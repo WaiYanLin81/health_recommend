@@ -67,8 +67,9 @@ Route::get('/registerpage','ShowController@registerfun')->name('registerpage');
 
 Route::get('/detailpage/{id}','ShowController@productdetailfun')->name('productdetailpage');
 Route::get('/fruitspage/{id}','ShowController@fruitsfun')->name('fruitspage');
-Route::get('/diseasepage','ShowController@diseasefun')->name('diseasepage');
 
+Route::get('/diseasepage','ShowController@diseasefun')->name('diseasepage');
+Route::get('/searchproduct','ShowController@productsearchpage')->name('productsearchpage');
 
 
 Auth::routes();

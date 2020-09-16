@@ -12,11 +12,17 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(Request $request)
+    {   
+        $search = $request->search;
+        if($request->search){
+            $products = Product::where('name','like','%'.$search.'%')->get();
+        }else{
         $products = Product::all();
-        return view('backend.products.index',compact('products'));
     }
+        return view('backend.products.index',compact('products'));
+        
+    }   
 
     /**
      * Show the form for creating a new resource.

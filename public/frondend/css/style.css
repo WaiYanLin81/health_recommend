@@ -939,9 +939,14 @@ ol {
 	color: #252525;
 }
 
-.featured__item__text h5 {
-	color: #252525;
+.featured__item__text h5 a{
+	background: #A0EA1D;
 	font-weight: 700;
+}
+
+.featured__item__text h5 a:hover{
+	color: red;
+	background: red;
 }
 
 /*---------------------
