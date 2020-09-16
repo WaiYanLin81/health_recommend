@@ -47,7 +47,7 @@ Route::get('/blogdetail','ShowController@blogdetailfun')->name('blogdetailpage')
 
 
 
-Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+// Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
 
 // Route::get('/','ShowController@indexfun')->name('index');

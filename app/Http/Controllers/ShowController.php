@@ -73,7 +73,7 @@ class ShowController extends Controller
     {
         $search = $request->search;
         if($request->search){
-            $products = Product::where('name','like','%'.$search.'%')->orderBy('name','ASC')->get();
+            $products = Product::where('name','like','%'.$search.'%')->where('category_id',1)->orderBy('name','ASC')->get();
              return view('searchproductbyname',compact('products'));
         }else{
 
