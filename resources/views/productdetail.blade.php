@@ -13,7 +13,7 @@
 		</div>
 		<div class="col-lg-12">
 			<img src="{{ asset($product->photo) }} " style="width: 300px;height: 200px">
-			<p class="justify-content-center">{!!$product->benefit !!}</p>
+			<p class="container-fluid">{!!$product->benefit !!}</p>
 		</div>
 		
 
@@ -22,6 +22,7 @@
 
 </div>
 	  
+	 
         
   
 

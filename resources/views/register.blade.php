@@ -4,7 +4,7 @@
  <!-- Subcategory Title -->
   <div class="jumbotron jumbotron-fluid subtitle">
       <div class="container">
-        <h1 class="text-center text-white"> Create Account </h1>
+        <h1 class="text-center " style="color:#A0EA1D; "> Create Account </h1>
       </div>
   </div>
   
@@ -96,16 +96,30 @@
               
               <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                 
-                <button type="submit" class="btn btn-secondary mainfullbtncolor btn-block"> Create Account </button>
+                <button type="submit" class="btn create___account mainfullbtncolor btn-block"> Create Account </button>
               </div>
           </form>
 
-          <div class=" mt-3 text-center ">
-            <a href="#" class="loginLink text-decoration-none">Have an account? Go to login</a>
+          <div class=" mt-3 text-center go_to_login ">
+            <a href="#" class="loginLink text-decoration-none " style="text-decoration: none;">Have an account? Go to login</a>
           </div>
       </div>
     </div>
 
   </div>
+
+
+  <style>
+    .create___account{
+      background:#A0EA1D;
+    }
+
+    .go_to_login a:hover{
+      color: #A0EA1D;
+    }
+    .go_to_login a{
+      color:black;
+    }
+  </style>
 	
 @endsection

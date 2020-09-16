@@ -12,11 +12,12 @@ class ShowController extends Controller
 {
     function indexfun (){
     	$fruits = Product::where('category_id',1)->orderBy('id','ASC')->get();
+        $herbs  = Product::where('category_id',2)->orderBy('id','ASC')->get();
     	$products = Product::latest()->paginate(3);
     	$latests = Product::latest()->paginate(3);
         $posts = Post::latest()->paginate(3);
         $categories = Category::all();
-        return view('index',compact('fruits','products','latests','posts','categories'));
+        return view('index',compact('fruits','products','latests','posts','categories','herbs'));
     }
 
     function loginfun ()
@@ -65,5 +66,20 @@ class ShowController extends Controller
         $disease = Disease::all(); 
         } 
         return view('disease.disease',compact('disease'));
+    }
+
+
+    public function productsearchpage(Request $request)
+    {
+        $search = $request->search;
+        if($request->search){
+            $products = Product::where('name','like','%'.$search.'%')->orderBy('name','ASC')->get();
+             return view('searchproductbyname',compact('products'));
+        }else{
+
+             return view ('searchproductbyname')->withMessage('No Details found. Try to search again !');
+        }
+
+       
     }
 }

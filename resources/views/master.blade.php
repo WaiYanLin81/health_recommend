@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="{{asset('frondend/css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('frondend/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('frondend/css/style.css')}}" type="text/css">
+
+
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5f614a0dd3589c00128107b3&product=inline-share-buttons" async="async"></script>
   
 
 
@@ -206,6 +209,8 @@
     </header>
 
 @yield('content')
+
+<div class="sharethis-inline-share-buttons"></div>
         
  <footer class="footer spad">
         <div class="container">
@@ -266,7 +271,7 @@
                         <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                        <div class="footer__copyright__payment"><img src="{{asset('frondend/img/payment-item.png')}}" alt=""></div>
+                        {{-- div class="footer__copyright__payment"><img src="{{asset('frondend/img/payment-item.png')}}" alt=""></div> --}}
                     </div>
                 </div>
             </div>
