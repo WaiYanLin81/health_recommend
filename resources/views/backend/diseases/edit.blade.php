@@ -27,6 +27,15 @@
 			          <span class="text-danger">{{ $errors->first('name') }}</span>
 			        </div>
 			      </div>
+
+           			<div class="form-group row">
+           				<label for="photo" class="col-sm-2 col-form-label">Photo</label>
+           				<div class="col-sm-5">
+           					<input type="file"  id="photo" name="photo">
+                      <img src="{{ asset($disease->photo)}}" class="img-fluid w-5">
+                    <input type="hidden" name="oldphoto" value="{{$disease->photo}}">
+           				</div>
+           			</div>
 			      <div class="form-group row {{ $errors->has('about') ? 'has-error' : '' }}">
 			        <label for="about" class="col-sm-2 col-form-label">About</label>
 			        <div class="col-sm-5">

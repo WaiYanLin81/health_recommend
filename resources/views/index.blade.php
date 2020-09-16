@@ -33,7 +33,8 @@
                 <div class="col-lg-12">
                     <div class="hero__search">
                         <div class="hero__search__form">
-                            <form action="#">
+                            <form  class="form-inline" action="{{ route('diseasepage') }}" method="get">
+                           {{--  <form action="#"> --}}
                                 {{-- <div class="hero__search__categories">
                                     All Categories
                                     <span class="arrow_carrot-down"></span>
