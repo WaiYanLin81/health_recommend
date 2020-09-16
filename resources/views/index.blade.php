@@ -56,13 +56,19 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <div class="hero__item set-bg" data-setbg="{{asset('frondend/img/hero/banner.jpg')}}">
                         <div class="hero__text">
                             <span>FRUIT FOR HEALlTH</span>
+=======
+                    <div class="hero__item set-bg" data-setbg="{{asset('frondend/img/hero/logo5.webp')}}">
+                        {{-- <div class="hero__text">
+                            <span>FRUIT FRESH</span>
+>>>>>>> 41d0b84b99d21b4064419b88a078ddeab43b8da2
                             <h2>Vegetable <br />100% Organic</h2>
                             <p>Free Pickup and Delivery Available</p>
                             <a href="#" class="primary-btn">SHOP NOW</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -91,15 +97,26 @@
                     </a>
                     @endforeach
                   
+<<<<<<< HEAD
                 </div>
 
 
                 <div class="col-lg-12">
+=======
+               <br> </div><br>
+
+
+                <br><div class="col-lg-12">
+>>>>>>> 41d0b84b99d21b4064419b88a078ddeab43b8da2
                     <div class="section-title from-blog__title">
                         <h2>Herbs</h2>
                     </div>
                  <div class="categories__slider owl-carousel">
+<<<<<<< HEAD
                      @foreach($herbs as $fruit )
+=======
+                     @foreach($fruits as $fruit )
+>>>>>>> 41d0b84b99d21b4064419b88a078ddeab43b8da2
                      <a href="{{ route('productdetailpage',$fruit->id)}}">
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="{{asset($fruit->photo)}}" style="width: 200px;height: 150px">

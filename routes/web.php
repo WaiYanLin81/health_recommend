@@ -75,3 +75,6 @@ Route::get('/searchproduct','ShowController@productsearchpage')->name('productse
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Example route
+Route::get('testing','TestController@testfun')->name('testpage');
