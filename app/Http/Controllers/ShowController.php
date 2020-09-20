@@ -14,10 +14,10 @@ class ShowController extends Controller
     	$fruits = Product::where('category_id',1)->orderBy('id','ASC')->get();
         $herbs  = Product::where('category_id',2)->orderBy('id','ASC')->get();
     	$products = Product::latest()->paginate(3);
-    	$latests = Product::latest()->paginate(3);
+    	// $latests = Product::latest()->paginate(3);
         $posts = Post::latest()->paginate(3);
         $categories = Category::all();
-        return view('index',compact('fruits','products','latests','posts','categories','herbs'));
+        return view('index',compact('fruits','products','posts','categories','herbs'));
     }
 
     function loginfun ()
@@ -32,19 +32,24 @@ class ShowController extends Controller
 
     public function productdetailfun($id)
     {
+       
         $product = Product::find($id);
     	return view('productdetail',compact('product'));
     }
 
     public function blogfun()
     {
-        $post = Post::all();
-        return view('blog',compact('post'));
+        $latests =Post::latest()->paginate(6);
+        $posts = Post::paginate(4);
+        return view('blog',compact('posts','latests'));
     }
 
-    public function blogdetailfun()
-    {
-        return view('blogdetail');
+    public function blogdetailfun($id)
+    {      
+         $latest= Post::latest()->paginate(6);
+         $blogs = Post::find($id);
+         $blog  = Post::inRandomOrder()->take(3)->get();
+        return view('blogdetail',compact('blogs','blog','latest'));
     }
 
     public function fruitsfun($id)
@@ -54,19 +59,30 @@ class ShowController extends Controller
         return view('fruits',compact('category','product'));
     }
 
+    // star disease
+
     public function diseasefun(Request $request)
 
     {    
         $search = $request->search;
         if($request->search)
         {
-            $disease = Disease::where('name','LIKE','%'.$search.'%')->get();
+            $diseases = Disease::where('name','LIKE','%'.$search.'%')->get();
         }else{
 
-        $disease = Disease::all(); 
+        $diseases = Disease::orderBy('name','ASC')->paginate(20); 
         } 
-        return view('disease.disease',compact('disease'));
+        return view('disease.disease',compact('diseases'));
     }
+
+
+     public function diseasedetailfun($id)
+    {
+        $products = Product::all();
+        $diseases = Disease::find($id);
+        return view('disease.diseasedetail',compact('diseases','products'));
+    }
+    // end disease
 
 
     public function productsearchpage(Request $request)
@@ -82,4 +98,6 @@ class ShowController extends Controller
 
        
     }
+
+
 }

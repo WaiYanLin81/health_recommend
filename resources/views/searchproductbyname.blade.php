@@ -3,11 +3,11 @@
 @section('content')
 <div class="container">
         	<div class="col-12">
-        		<h3>Search Fruits</h3>
+        		<h3>Search Results</h3>
 
             </div><br>
 
-
+             <div class="row featured__filter">
             <div class="input-group col-12">
             <form  class="form-inline" action="" method="get">
                  <input class="form-control bg-light pl-4 border-right-0 border" type="search" placeholder="Search" name="search" id="">
@@ -15,8 +15,9 @@
                  <button class="btn  my-2 my-sm-0 btn-success" type="submit">Search</button>
             </form>
         </div>
+    </div><br>
 
-            <br><div class="row featured__filter">
+            <div class="row featured__filter">
             	@foreach($products as $product)
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 mix oranges fresh-meat">
                     <div class="featured__item " style="border: 2px solid  #A0EA1D">

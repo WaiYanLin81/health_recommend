@@ -1,4 +1,7 @@
 @extends('master')
+@section('home')
+    'active'
+@endsection
 @section('content')
     <!-- Header Section End -->
 
@@ -33,18 +36,18 @@
                <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
-<<<<<<< HEAD
-                            <form action="#">
+
+                            <form action="{{ route('productsearchpage') }}" method="get">
                                {{--  <div class="hero__search__categories">
-=======
+
                             <form  class="form-inline" action="{{ route('diseasepage') }}" method="get">
-                           {{--  <form action="#"> --}}
+                           {{ <form action="#"> --}}
                                 {{-- <div class="hero__search__categories">
 >>>>>>> e7d765355363327c0bf639c168b5c875ac63ef32
                                     All Categories
                                     <span class="arrow_carrot-down"></span>
                                 </div> --}}
-                                <input type="text" placeholder="What do yo u need?">
+                                <input type="text" placeholder="What do yo u need?" name="search">
                                 <button type="submit" class="site-btn">SEARCH</button>
                             </form>
                         </div>
@@ -106,6 +109,7 @@
                     <div class="section-title from-blog__title">
                         <h2>Herbs</h2>
                     </div>
+                </div>
                  <div class="categories__slider owl-carousel">
 
 
@@ -152,7 +156,7 @@
                         </div>
                         <div class="blog__item__text">
                             <ul>
-                                <li><i class="fa fa-calendar-o"></i> &nbsp;{{$post->created_at}}</li>
+                                <li><i class="fa fa-calendar-o"></i> &nbsp;{{ date('d m Y',strtotime($post->created_at)) }}</li>
                                 <li><i class="fa fa-comment-o"></i> 5</li>
                             </ul>
                             <h5><a href="#">{{$post->title}}</a></h5>
@@ -160,7 +164,7 @@
                             <p>{!! substr($post->description, 0, 100 ) !!} </p>
                         </div>
                             <div class="container-fluid">
-                             <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+                             <a href="{{ route('blogdetailpage',$post->id) }}" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
                          </div>
                                 
                         </div>

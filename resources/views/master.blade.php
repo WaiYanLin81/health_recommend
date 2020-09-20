@@ -95,7 +95,7 @@
                         <li><a href="./blog-details.html">Blog Details</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="{{ route('blogpage') }}">Blog</a></li>
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -174,9 +174,9 @@
                 <div class="col-lg-6"  >
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="{{ route('index') }}">Home</a></li>
+                            <li class=@yield('home')><a href="{{ route('index') }}">Home</a></li>
                             {{-- <li><a href="./shop-grid.html">Shop</a></li> --}}
-                            <li><a href="#">Category</a>
+                            <li class=@yield('category')><a href="#">Category</a>
                                 <ul class="header__menu__dropdown">
                                     @foreach($categories as $category)
                                     <li><a href="{{ route('fruitspage',$category->id) }}">{{$category->name}}</a></li>
@@ -186,9 +186,9 @@
                                     <li><a href="./blog-details.html">Blog Details</a></li> --}}
                                 </ul>
                             </li>
-                            <li><a href="{{-- {{ route('blogpage') }} --}}">Blog</a></li>
+                            <li class=@yield('blog')><a href="{{ route('blogpage') }}">Blog</a></li>
                             <li><a href="./contact.html">Contact</a></li>
-                            <li><a href="{{ route('diseasepage') }}">Disease</a></li>
+                            <li class=@yield('disease')><a href="{{ route('diseasepage') }}">Disease</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -212,7 +212,7 @@
 
 <div class="sharethis-inline-share-buttons"></div>
         
- <footer class="footer spad">
+ <br><footer class="footer spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">

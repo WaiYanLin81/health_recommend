@@ -37,12 +37,37 @@
            				</div>
            			</div>
 			      <div class="form-group row {{ $errors->has('about') ? 'has-error' : '' }}">
-			        <label for="about" class="col-sm-2 col-form-label">About</label>
+			        <label for="about" class="col-sm-2 col-form-label ">About</label>
 			        <div class="col-sm-5">
-			          <input type="text" class="form-control" id="about" name="about" value="{{$disease->about}}">
+			          <textarea class="benefit" name="about">{{ $disease->about }}</textarea>
 			          <span class="text-danger">{{ $errors->first('about') }}</span>
 			        </div>
 			      </div>
+
+
+
+
+			       <div class="form-group row {{ $errors->has('description') ? 'has-error' : '' }}">
+			        <label for="about" class="col-sm-2 col-form-label">description</label>
+			        <div class="col-sm-5">
+			          <textarea class="form-control" name="description"></textarea>
+			          <span class="text-danger">{{ $errors->first('description') }}</span>
+			        </div>
+			      </div>
+
+
+			      <div class="form-group row">
+           					<label for="product" class="col-sm-2">Product</label>
+           		
+                  <div class="col-sm-5">
+                  <select class="custom-select" size="5" id="product" name="product[]" multiple="multiple" id="inputBrand">
+                    <option selected>Choose Product</option>
+                    @foreach($products as $product)
+                    <option value="{{$product->id}}">{{$product->name}}</option>
+                  @endforeach
+                  </select>
+                  </div>
+           			  </div>
 
 {{-- 
 

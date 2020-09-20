@@ -50,7 +50,7 @@ class DiseaseController extends Controller
             "photo" => 'required',
             "about" => 'required',
             "description" => 'required',
-            "product"     => 'nullable|array'
+            "product"     => 'required|array'
          ]); 
 
          $imageName = time().'.'.$request->photo->extension();
@@ -126,7 +126,8 @@ class DiseaseController extends Controller
     public function edit(Disease $disease)
     {
         //By Ye Win Naing
-         return view('backend.diseases.edit',compact('disease'));
+        $products = Product::all();
+         return view('backend.diseases.edit',compact('disease','products'));
 
     }
 
@@ -141,15 +142,55 @@ class DiseaseController extends Controller
     {
          //By Ye Win Naing
         $request->validate([
-            'name'=> 'required',
-            'about' => 'required',
-        ]);
+           
+            "name" => 'required',
+            "photo" => 'sometimes',
+            "oldphoto" =>'required',
+            "about" => 'required',
+            "description" => 'required',
+            "product"     => 'required|array'
+         ]); 
 
-        $disease->name = $request->name;
-        $disease->about = $request->about;
-        $disease->save();
-        return redirect()->route('diseases.index');
+
+        //  $imageName = time().'.'.$request->photo->extension();
+
+        // $request->photo->move(public_path('backend/diseaseimg'),$imageName);
+
+        // $path = 'backend/diseaseimg/'.$imageName;
+
+         if($request->hasFile('photo')){
+
+                $imageName = time().'.'.$request->photo->extension();
+
+                $request->photo->move(public_path('backend/diseaseimg'),$imageName);
+
+                $path = 'backend/diseaseimg/'.$imageName;
+
+
+          }else{
+
+            $path=$request->oldphoto;
+
+          }
+
+
+        $description=explode('/',$request->description);
+        // dd($description,$request->product);
+        
+         $disease->name = $request->name;
+         $disease->photo = $path;
+         $disease->about = $request->about;   
+         $disease->save();
+         $product = $request->product;
+
+
+           for($i=0; $i<count($product);$i++){
+                $array = [$product[$i] => ['description' => $description[$i]]
+            ];
+
+            $disease->products()->attach($array);
     }
+}
 
     /**
      * Remove the specified resource from storage.

@@ -1,20 +1,39 @@
 @extends('master')
-
+@section('category')
+    'active'
+@endsection
 @section('content')
+
+<section class="breadcrumb-section set-bg" data-setbg="{{ asset('frondend/img/fruits.jpg') }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Health benefit of Eating {{$category->name}}</h2>
+                        <div class="breadcrumb__option">
+                            <a href="./index.html">Home</a>
+                            <span>Category-{{$category->name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><br>
 <div class="container">
         	<div class="col-12">
-        		<h3>Health benefit of Eating {{$category->name}}</h3>
+        		
 
             </div><br>
 
-
-            <div class="input-group col-12">
+            <div class="row">
+            <div class="input-group col-12" >
             <form  class="form-inline" action="{{ route('productsearchpage') }}" method="get">
                  <input class="form-control bg-light pl-4 border-right-0 border" type="search" placeholder="Search" name="search" id="">
                               
                  <button class="btn  my-2 my-sm-0 btn-success" type="submit">Search</button>
             </form>
         </div>
+    </div>
 
             <br><div class="row featured__filter">
             	@foreach($category->products as $product)
