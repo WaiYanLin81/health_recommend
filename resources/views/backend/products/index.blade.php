@@ -47,7 +47,7 @@
        									
        									<td class="text-center">
                           
-       									<a href="{{route('products.show',$product->id)}}" class="btn btn-outline-primary"><i class="fas fa-info"></i></a>&nbsp;&nbsp;
+       									<a href="{{route('productdetailpage',$product->id)}}" class="btn btn-outline-primary"><i class="fas fa-info"></i></a>&nbsp;&nbsp;
                         <a href="{{ route('products.edit',$product->id) }}" class="btn btn-outline-warning"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;
        									<form action="{{route('products.destroy',$product->id)}}" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure to Delete?')">
                                 @csrf

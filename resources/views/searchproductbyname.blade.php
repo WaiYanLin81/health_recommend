@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+    @error('no_post_result')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
         	<div class="col-12">
         		<h3>Search Results</h3>
 
@@ -30,7 +33,12 @@
                         </div>
                         <div class="featured__item__text">
                             <h6>{{$product->name}}</h6>
+                            @role('Customer')
                             <h5 ><a href="{{ route('productdetailpage',$product->id) }}" class="text-dark btn  container-fluid" style="text-decoration: none;border: 1px"> View Detail</a></h5>
+                            @else
+                            <h5 ><a href="{{ route('loginpage') }}" class="text-dark btn  container-fluid" style="text-decoration: none;border: 1px"> View Detail</a></h5>
+                            @endrole
+
                         </div>
                     </div>
               

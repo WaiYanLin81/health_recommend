@@ -10,14 +10,22 @@ use App\Disease;
 
 class ShowController extends Controller
 {
+    public function __construct()
+
+    {
+        // $this->middleware('role:Admin')->only('productdetailfun','diseasedetailfun');
+        // $this->middleware('role:Customer')->only('productdetailfun','diseasedetailfun');
+         $this->middleware('auth')->only('productdetailfun','diseasedetailfun');
+    }
+
     function indexfun (){
     	$fruits = Product::where('category_id',1)->orderBy('id','ASC')->get();
         $herbs  = Product::where('category_id',2)->orderBy('id','ASC')->get();
     	$products = Product::latest()->paginate(3);
-    	// $latests = Product::latest()->paginate(3);
+    	$latests = Product::latest()->paginate(12);
         $posts = Post::latest()->paginate(3);
         $categories = Category::all();
-        return view('index',compact('fruits','products','posts','categories','herbs'));
+        return view('index',compact('fruits','products','posts','categories','herbs','latests'));
     }
 
     function loginfun ()
@@ -94,11 +102,12 @@ class ShowController extends Controller
     {
         $search = $request->search;
         if($request->search){
-            $products = Product::where('name','like','%'.$search.'%')->where('category_id',1)->orderBy('name','ASC')->get();
+            $products = Product::where('name','like','%'.$search.'%')->orderBy('name','ASC')->get();
              return view('searchproductbyname',compact('products'));
         }else{
 
-             return view ('searchproductbyname')->withMessage('No Details found. Try to search again !');
+             // return view ('searchproductbyname')->withMessage('No Details found. Try to search again !');
+             return view ('searchproductbyname')->withErrors(['no_post_result' => 'There is no result 😔']);
         }
 
        

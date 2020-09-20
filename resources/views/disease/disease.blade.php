@@ -49,14 +49,26 @@
 
 	<div class="row">
 		@foreach($diseases as $disease)
+
     
  
+
+     @role('Customer')
+
 		<div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6 my-3">
       <a href="{{ route('diseasedetailpage',$disease->id) }}">
 			<img src="{{ asset($disease->photo) }}" width="200" height="150">
 			<h5>{{$disease->name}}</h5>
     </a>
 		</div>
+    @else
+    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-6 my-3">
+      <a href="{{ route('loginpage') }}">
+      <img src="{{ asset($disease->photo) }}" width="200" height="150">
+      <h5>{{$disease->name}}</h5>
+    </a>
+    </div>
+    @endrole
 
 		@endforeach
 

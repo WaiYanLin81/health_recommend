@@ -9,7 +9,7 @@
                     <div class="breadcrumb__text">
                         <h2>Health benefit of Eating {{$product->name}}</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
+                            <a href="">Home</a>
                             <span>Category-{{$product->name}}</span>
                         </div>
                     </div>

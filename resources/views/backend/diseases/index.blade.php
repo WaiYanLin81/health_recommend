@@ -34,7 +34,7 @@
                            {{--  <td>{{$disease->about}}</td> --}}
                             
                             <td>
-                            <a href="{{-- {{route('categories.edit',$category->id)}} --}}" class="btn btn-outline-primary"><i class="fas fa-info"></i></a>&nbsp;&nbsp;
+                            <a href="{{ route('diseasedetailpage',$disease->id )}}" class="btn btn-outline-primary"><i class="fas fa-info"></i></a>&nbsp;&nbsp;
                             <a href="{{route('diseases.edit',$disease->id)}}" class="btn btn-outline-warning"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;
 
                             <form action="{{route('diseases.destroy',$disease->id)}}" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure to Delete?')">
