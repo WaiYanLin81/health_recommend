@@ -67,7 +67,7 @@
                 <div class="form-group row">
                   <label for="about"  class="col-sm-2  col-form-label">About</label>
                   <div class="col-sm-5">
-                    <textarea class="form-control" id="about" name="about"></textarea>
+                    <textarea class="form-control benefit" id="about" name="about"></textarea>
                     @if ($errors->has('about'))
                     <span class="text-danger">{{ $errors->first('about')}}</span>
                     @endif
@@ -86,17 +86,11 @@
 
            			<div class="form-group row">
            					<label for="product" class="col-sm-2">Product</label>
-           				{{-- <select class="form-control-md" id="inputBrand" name="product[]" multiple ="multiple" id="product">
-           					<optgroup label="Choose Product">
-           						@foreach($products as $product)
-           						<option value="{{$product->id}}">{{$product->name}}</option>
-           						@endforeach
-           						
-           					</optgroup>
-           				</select> --}}
+           		
                   <div class="col-sm-5">
-                  <select class="custom-select" size="5" id="product" name="product[]" multiple="multiple" id="inputBrand">
+                  <select class="custom-select " size="5" id="product" name="product[]" multiple="multiple" id="inputBrand">
                     <option selected>Choose Product</option>
+                     {{--  <optgroup label="Choose Subcategory" --}}>
                     @foreach($products as $product)
                     <option value="{{$product->id}}">{{$product->name}}</option>
                   @endforeach

@@ -40,7 +40,7 @@
 	@auth
 	<form action="{{url('/comments/add')}}" method="post">
 		@csrf
-		<input type="hidden" name="disease_id" value="{{$disease->id}}">
+		<input type="hidden" name="disease_id" value="{{$disease->id,$users->id}} ">
 		<textarea name="content" class="form-control mb-2" placeholder="New Comment"></textarea>
 		<input type="submit" value="Add Comment" class="btn btn-success">
 

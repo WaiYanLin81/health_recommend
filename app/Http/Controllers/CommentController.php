@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class CommentController extends Controller
 {
@@ -12,6 +13,7 @@ class CommentController extends Controller
 		$comment = new Comment;
 		$comment->content = request()->content;
 		$comment->disease_id = request()->disease_id;
+		$comment->user_id = auth()->user()->id;
 		$comment->save();
 		return back();
 	}
@@ -22,26 +24,34 @@ class CommentController extends Controller
         $request->validate([
            
             "content" => 'required',
+             // "user_id" => 'required',
            
          ]);
 
          // Data insert
         $comment = new Comment;
         $comment->content = $request->content;
+        //$comment->user_id = Auth::users()->id;
+
+        // $user=Auth::user()->id;
+        // dd($user);
         $comment->save();
 
         return back;
     }
 
 
-
-	public function delete($id){
-		$comment = Comment::find($id);
-		$comment->delete();
-
-		return back();
-	}
-
+    public function delete($id)
+    {
+    	$comment = Comment::find($id);
+    	if($comment->user_id == auth()->user()->id) {
+    		$comment->delete();
+    		return back();
+    	} else {
+    		return back()->with('error', 'Unauthorize');
+    	}
+    }
+	
 	public function __construct()
 	{
 		$this->middleware('auth');

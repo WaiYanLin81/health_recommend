@@ -33,49 +33,35 @@ Route::resource('posts','PostController');
 
 
 
-
+// frondend
 Route::get('/blog','ShowController@blogfun')->name('blogpage');
 
-
-
-
-Route::get('/blog','ShowController@blogfun')->name('blogpage');
-Route::get('/blogdetail','ShowController@blogdetailfun')->name('blogdetailpage');
-
-
-// Route::get('/blog','ShowController@blogfun')->name('blogpage');
-
-
-
-// Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
-
-
-// Route::get('/','ShowController@indexfun')->name('index');
-// Route::get('/login','ShowController@loginfun')->name('login');
-// Route::get('/register','ShowController@registerfun')->name('register');
-
-
-
-
-
-
+Route::get('/blogdetail/{id}','ShowController@blogdetailfun')->name('blogdetailpage');
 
 Route::get('/','ShowController@indexfun')->name('index');
 
 Route::get('/loginpage','ShowController@loginfun')->name('loginpage');
+
 Route::get('/registerpage','ShowController@registerfun')->name('registerpage');
 
 Route::get('/detailpage/{id}','ShowController@productdetailfun')->name('productdetailpage');
+
 Route::get('/disease/{id}','ShowController@diseasedetailfun')->name('diseasedetailpage');
+
+
+
 Route::get('/fruitspage/{id}','ShowController@fruitsfun')->name('fruitspage');
 
 Route::get('/diseasepage','ShowController@diseasefun')->name('diseasepage');
+
+Route::get('/diseasedetail/{id}','ShowController@diseasedetailfun')->name('diseasedetailpage');
+
 Route::get('/searchproduct','ShowController@productsearchpage')->name('productsearchpage');
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 //Example route
 Route::get('testing','TestController@testfun')->name('testpage');
