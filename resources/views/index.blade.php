@@ -13,13 +13,17 @@
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
-                            <span>All departments</span>
+                            <span>Recent New</span>
                         </div>
                         <ul>
-                            @foreach($categories as $category)
-                            <li><a href="#" style="text-decoration: none">{{$category->name}}</a></li>
+                            @foreach($latests as $latest)
+                            @role('Customer')
+                            <li><a href="{{ route('productdetailpage',$latest->id) }}" style="text-decoration: none">{{$latest->name}}</a></li>
+                            @else
+                             <li><a href="{{ route('loginpage') }}" style="text-decoration: none">{{$latest->name}}</a></li>
+                             @endrole
                             @endforeach
-                            <li><a href="#">Vegetables</a></li>
+                         {{--    <li><a href="#">Vegetables</a></li>
                             <li><a href="#">Fruit & Nut Gifts</a></li>
                             <li><a href="#">Fresh Berries</a></li>
                             <li><a href="#">Ocean Foods</a></li>
@@ -29,7 +33,7 @@
                             <li><a href="#">Papayaya & Crisps</a></li>
                             <li><a href="#">Oatmeal</a></li>
                             <li><a href="#">Fresh Bananas</a></li>
-                        </ul>
+                        </ul> --}}
                     </div>
 
                 </div>
@@ -65,7 +69,7 @@
                     <div class="hero__item set-bg" data-setbg="{{ asset('frondend/img/hero/banner.jpg') }}">
                         <div class="hero__text">
                             <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
+                            <h2>Health Is<br />Wealth</h2>
                           {{--   <p>Free Pickup and Delivery Available</p> --}}
                             <a href="#" class="primary-btn" >REGISTER NOW</a>
                         </div>
@@ -87,6 +91,7 @@
                 </div>
                 <div class="categories__slider owl-carousel">
                      @foreach($fruits as $fruit )
+                     @role('Customer')
                      <a href="{{ route('productdetailpage',$fruit->id)}}">
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="{{asset($fruit->photo)}}" style="width: 200px;height: 150px">
@@ -95,6 +100,15 @@
                         
                     </div>
                     </a>
+                    @else
+                        <a href="{{ route('loginpage')}}">
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="{{asset($fruit->photo)}}" style="width: 200px;height: 150px">
+                            {{-- <h5><a href="#">Fresh Fruit</a></h5> --}}
+                        </div>
+                    </div>
+                        </a>
+                        @endrole
                     @endforeach
 
                 </div>
@@ -114,7 +128,7 @@
 
 
                      @foreach($herbs as $fruit )
-
+                     @role('Customer')
                      <a href="{{ route('productdetailpage',$fruit->id)}}">
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="{{asset($fruit->photo)}}" style="width: 200px;height: 150px">
@@ -123,6 +137,20 @@
                         
                     </div>
                     </a>
+                    @else
+
+                      <a href="{{ route('loginpage')}}">
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="{{asset($fruit->photo)}}" style="width: 200px;height: 150px">
+                            {{-- <h5><a href="#">Fresh Fruit</a></h5> --}}
+                        </div>
+                        
+                    </div>
+                    </a>
+
+                    @endrole
+
+
                     @endforeach
 
 
@@ -157,11 +185,11 @@
                         <div class="blog__item__text">
                             <ul>
                                 <li><i class="fa fa-calendar-o"></i> &nbsp;{{ date('d m Y',strtotime($post->created_at)) }}</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
+                                
                             </ul>
                             <h5><a href="#">{{$post->title}}</a></h5>
                             <div class="p">
-                            <p>{!! substr($post->description, 0, 100 ) !!} </p>
+                        <p>{!! substr($post->description, 0, 500 ) !!} </p>
                         </div>
                             <div class="container-fluid">
                              <a href="{{ route('blogdetailpage',$post->id) }}" class="blog__btn">READ MORE <span class="arrow_right"></span></a>

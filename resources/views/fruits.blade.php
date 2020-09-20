@@ -46,10 +46,17 @@
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul> --}}
                         </div>
+                        @role('Customer')
                         <div class="featured__item__text">
                             <h6>{{$product->name}}</h6>
                             <h5 ><a href="{{ route('productdetailpage',$product->id) }}" class="text-dark btn  container-fluid" style="text-decoration: none;border: 1px"> View Detail</a></h5>
                         </div>
+                        @else
+                             <div class="featured__item__text">
+                            <h6>{{$product->name}}</h6>
+                            <h5 ><a href="{{ route('loginpage') }}" class="text-dark btn  container-fluid" style="text-decoration: none;border: 1px"> View Detail</a></h5>
+                        </div>
+                        @endrole
                     </div>
               
             </div>

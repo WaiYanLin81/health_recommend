@@ -11,6 +11,7 @@
            		 <h1 class="h3 mb-0 text-gray-800">Products Create Form</h1>
            	</div>
            </div>
+            <h1><a href="{{ route('posts.create') }}" class="btn btn-primary">Add New</a></h1>
        </div>
 
        				<div class="row">
@@ -31,10 +32,17 @@
        								<tr>
        									<td>{{$i++}}</td>
        									<td>{{ $post->title}}</td>
-       									<td><a href="" class="btn btn-primary">View Post</a></td>
+       									<td><a href="{{ route('blogdetailpage',$post->id) }} " class="btn btn-primary">View Post</a></td>
        									
        									<td><a href="{{ route('posts.edit',$post->id) }}" class="btn btn-warning"><i class="icofont-edit"></i></a>
-       									<a href="" class="btn btn-danger"><i class="icofont-bin"></i></i></a>
+                          <form action="{{route('posts.destroy',$post->id)}}" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure to Delete?')">
+                                @csrf
+                                @method('DELETE')
+                                <!-- delete lote yin method ka post nat ma ya buu dar kout method ko delete so pe change pay ya mal update lo myoe pot -->
+                                <button class="btn btn-outline-danger "><i class="fas fa-trash"></i></button>
+
+                            </form>
+       								
        										</td>
 
        								</tr>

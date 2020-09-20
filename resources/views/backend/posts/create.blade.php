@@ -10,6 +10,7 @@
            		 <h1 class="h3 mb-0 text-gray-800">Products Create Form</h1>
            	</div>
            </div>
+           
        </div>
            		<form action="{{ route('posts.store')}}" method="post" enctype="multipart/form-data">
                 @csrf

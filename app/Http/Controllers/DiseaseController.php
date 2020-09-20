@@ -174,15 +174,16 @@ class DiseaseController extends Controller
           }
 
 
-        $description=explode('/',$request->description);
+        // $description=explode('/',$request->description);
         // dd($description,$request->product);
         
          $disease->name = $request->name;
          $disease->photo = $path;
          $disease->about = $request->about;   
          $disease->save();
+         $disease->products()->deatch();
          $product = $request->product;
-
+            $description=explode('/',$request->description);
 
            for($i=0; $i<count($product);$i++){
                 $array = [$product[$i] => ['description' => $description[$i]]

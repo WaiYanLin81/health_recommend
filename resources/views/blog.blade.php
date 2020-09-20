@@ -104,11 +104,10 @@
                                     <ul>
 
                                         <li><i class="fa fa-calendar-o"></i> {{ date('d m Y',strtotime($post->created_at)) }} </li>
-                                        <li><i class="fa fa-comment-o"></i> 5</li>
+                                        <li></li>
                                     </ul>
                                     <h5><a href="#">{{$post->title}}</a></h5>
-                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                        quaerat </p>
+                                    <p>{!! substr($post->description, 0, 500 ) !!}  </p>
                                     <a href="{{ route('blogdetailpage',$post->id) }}" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
                                 </div>
                             </div>

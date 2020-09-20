@@ -23,7 +23,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
-  
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 
     
@@ -94,6 +94,7 @@
             <a class="collapse-item" href="{{ route('products.index') }}">Products</a>
             <a class="collapse-item" href="{{ route('categories.index')}}">Category</a>
             <a class="collapse-item" href="{{route('diseases.index')}}">Diaease</a>
+            <a class="collapse-item" href="{{route('posts.index')}}">Posts</a>
             <a class="collapse-item" href="utilities-other.html">Other</a>
           </div>
         </div>
