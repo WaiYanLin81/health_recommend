@@ -15,5 +15,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(RoleTableSeeder::class);
 
+        //factory(App\Disease::class, 20)->create();
+        //factory(App\Comment::class, 40)->create();
+
 }
 }
