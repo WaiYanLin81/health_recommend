@@ -83,7 +83,7 @@ class ShowController extends Controller
             $diseases = Disease::where('name','LIKE','%'.$search.'%')->get();
         }else{
 
-        $diseases = Disease::orderBy('name','ASC')->paginate(20); 
+        $diseases = Disease::orderBy('name','ASC')->get(); 
         } 
         return view('disease.disease',compact('diseases'));
     }
@@ -111,6 +111,11 @@ class ShowController extends Controller
         }
 
        
+    }
+
+    Public function contactfun()
+    {
+        return view('contact');
     }
 
 

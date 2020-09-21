@@ -86,17 +86,17 @@
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
                 <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
-                <li><a href="#">Pages</a>
-                    <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
-                    </ul>
-                </li>
+                
+                 <li class=@yield('category')><a href="#">Category</a>
+                                <ul class="header__menu__dropdown">
+                                    @foreach($categories as $category)
+                                    <li><a href="{{ route('fruitspage',$category->id) }}">{{$category->name}}</a></li>
+                                    @endforeach
+                                  
+                                </ul>
+                            </li>
                 <li><a href="{{ route('blogpage') }}">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="{{ route('contactpage') }}">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -168,7 +168,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="{{asset('frondend/img/logo.png')}}" alt=""></a>
+                        <a href="./index.html"><img src="{{asset('frondend/img/logo.png')}}" alt="" width="119" height="50"></a>
                     </div>
                 </div>
                 <div class="col-lg-6"  >
@@ -181,13 +181,11 @@
                                     @foreach($categories as $category)
                                     <li><a href="{{ route('fruitspage',$category->id) }}">{{$category->name}}</a></li>
                                     @endforeach
-                                   {{--  <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li> --}}
+                                  
                                 </ul>
                             </li>
                             <li class=@yield('blog')><a href="{{ route('blogpage') }}">Blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="{{ route('contactpage') }}">Contact</a></li>
                             <li class=@yield('disease')><a href="{{ route('diseasepage') }}">Disease</a></li>
                         </ul>
                     </nav>
@@ -223,7 +221,7 @@
                         <ul>
                             <li>Address: 60-49 Road 11378 New York</li>
                             <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
+                            <li>Email: hello@gmail/com</li>
                         </ul>
                     </div>
                 </div>
@@ -291,8 +289,8 @@
    
 
  
-<div class="GoogleCreativeContainerClass" id="gcc_HLZhX_PBDOel3LUP1oazsAY" data-creative-load-listener=""><a target="_blank" id="img_anch_CPO_n6iL7esCFecStwAdVsMMZg" href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjssArEk7YsJ-c_wq0yBgh4xKag_N1DsSfhzb1pBMuy2-0vyXPrB7Rq7TlY85SkhEhkix32NjYPrGnaU_p_YMWu4c4Eze-HuB_y_wMgTW0hmYOfN6U2JQEDpHzKv3sJItDSv77FjjIrWwUfx3slNtKEp-aGWb4JDAdmxEDSEAZPgNudjrIq7MDWVJqifxWFYz33UrOqM-3yWK4qFQsdt68Bl4MrXs2OY91WvbpIYoZ-jTW_vcUw24OSIW6JUxOfwITc1bd58YvKBaL171SQYfWC9CGUeAYYi-BEesf8zZiMLTZ3ZEegVNldwJ0oqcWkiZemi2g-iJHLdznYFutc-H7pjIFYnvGFXEpoEOe6ZtAlnhFzJx41Kt-rthr_e8TkY-rSZIiw0WWsr4lxLltvHZgj1BzkduGr03e_FAUxEhT24zJ4hjyTKmDd003Cg52bmq7y1J8cEywt-nqiqdEDaaqPOFph55iKu9F5IrCtg8_yEaap5hZI2ab6rqJWtpwZCP9KRM3iBXQANN-MQP36YsLLm-SMCZ3ynKyUZUyq4tP1jcAH-sQbascIHv2bP83rKUtO0-BTMepbbEOM35qzo0tp9CLvjKAGnc3Wk9XWiMMyX4JIZ02uGM6wI9xB4TmmW2zrePypXoghdsFUJCcW8zZhEe4mUK-WoOO-0eW4K4Qc9OvwMDw6dR7bJ9m0AcB46rDPXuyjOGphNuNH17lkU2wz55XdT24KA7HFJj3E8NZGUied0XJhFzUTcYUeaGuEcNq_M6MXttF0NIK_oxKuAEhpikt8wSrHk0v4kHXd9dTHqA2iJ3vg0oD7Rw5oyjiY5umlmrv53zDAwBBbbg2_27PJu7qXDzPZZ-CVsgTq__L6-hQd3hsWZPJtNOizi9LDhpGXAEtr8Pam9z9TKiaEscH04Wp7MU8q1MGjwbxWDKNsFIIHrtzisGPdTDQwMjuATXQYu0N_VjbTjBt8UkjISv_1XzzlORSpzF54aTKCYSlAJ_0ZUNR-nEphRpU8PWKe-PLcjb5GRfZuq4YJeEnCeFoPfdBD9ZnLY46yv4aA3GfHyE9ONUcZKIA47GSfHhyLwHVoEKGAS4eOzxaKbS&amp;sai=AMfl-YRmaSS42zb5e4JGd4OTu1Jm7fShw9K240IbUbZMJOmuYY9E3Y-Wg0sqCvMfJOP8mCzM85aIH0tmPs-cU5ERLEFzL4weGOBIykSBUKuD-NZTvijLz2phiUhqdmE2Ea2Ebkcf-gf_c3AqZoKPvRU79EAqA1YkisKH43pVLQ3z&amp;sig=Cg0ArKJSzEhr5nYylmHZ&amp;urlfix=1&amp;nx=485&amp;ny=36&amp;dim=728x90&amp;adurl=https://www.123rf.com/%3Futm_source%3DPS%26utm_medium%3DCPM%26utm_campaign%3DWW%26dclid%3D%25edclid!%23display08p"><img src="https://s0.2mdn.net/4646536/1-USA-PROSPECTING-VectorPrice-728x90.jpg" alt="Advertisement" border="0" width="728" height="90" style="float: right;"></a><script data-jc="74" data-jc-version="r20200914" data-jcp-a-id="img_anch_CPO_n6iL7esCFecStwAdVsMMZg">(function(){/*  Copyright The Closure Library Authors. SPDX-License-Identifier: Apache-2.0 */ var b=/^(?:(?:https?|mailto|ftp):|[^:/?#]*(?:[/?#]|$))/i;var e,f=document.currentScript;e=(f=void 0===f?null:f)&&74==f.getAttribute("data-jc")?f:document.querySelector('[data-jc="74"]');if(null==e)throw Error("JSC not found 74");for(var g={},l=e.attributes,m=l.length-1;0<=m;m--){var n=l[m].name;0===n.indexOf("data-jcp-")&&(g[n.substring(9)]=l[m].value)} document.getElementById(g["a-id"]).addEventListener("mousedown",function(c){var h=c.currentTarget,a=h.querySelector("img[alt]");if(a){var d=h.href;var p=+Math.round(c.clientX-a.offsetLeft);c=+Math.round(c.clientY-a.offsetTop);a=+a.width+"x"+ +a.height;var k=/^(https?:[^:?]+[/]pcs[/]click[^/]+?)(?:&nx[^&]+&ny[^&]+&dim[^&]+)?(&adurl=.*)/.exec(d);d=k?k[1]+("&nx="+p+"&ny="+c+"&dim="+a)+k[2]:d;b.test(d)&&(h.href=d)}});}).call(this);</script></div>
-
+{{-- <div class="GoogleCreativeContainerClass" id="gcc_HLZhX_PBDOel3LUP1oazsAY" data-creative-load-listener=""><a target="_blank" id="img_anch_CPO_n6iL7esCFecStwAdVsMMZg" href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjssArEk7YsJ-c_wq0yBgh4xKag_N1DsSfhzb1pBMuy2-0vyXPrB7Rq7TlY85SkhEhkix32NjYPrGnaU_p_YMWu4c4Eze-HuB_y_wMgTW0hmYOfN6U2JQEDpHzKv3sJItDSv77FjjIrWwUfx3slNtKEp-aGWb4JDAdmxEDSEAZPgNudjrIq7MDWVJqifxWFYz33UrOqM-3yWK4qFQsdt68Bl4MrXs2OY91WvbpIYoZ-jTW_vcUw24OSIW6JUxOfwITc1bd58YvKBaL171SQYfWC9CGUeAYYi-BEesf8zZiMLTZ3ZEegVNldwJ0oqcWkiZemi2g-iJHLdznYFutc-H7pjIFYnvGFXEpoEOe6ZtAlnhFzJx41Kt-rthr_e8TkY-rSZIiw0WWsr4lxLltvHZgj1BzkduGr03e_FAUxEhT24zJ4hjyTKmDd003Cg52bmq7y1J8cEywt-nqiqdEDaaqPOFph55iKu9F5IrCtg8_yEaap5hZI2ab6rqJWtpwZCP9KRM3iBXQANN-MQP36YsLLm-SMCZ3ynKyUZUyq4tP1jcAH-sQbascIHv2bP83rKUtO0-BTMepbbEOM35qzo0tp9CLvjKAGnc3Wk9XWiMMyX4JIZ02uGM6wI9xB4TmmW2zrePypXoghdsFUJCcW8zZhEe4mUK-WoOO-0eW4K4Qc9OvwMDw6dR7bJ9m0AcB46rDPXuyjOGphNuNH17lkU2wz55XdT24KA7HFJj3E8NZGUied0XJhFzUTcYUeaGuEcNq_M6MXttF0NIK_oxKuAEhpikt8wSrHk0v4kHXd9dTHqA2iJ3vg0oD7Rw5oyjiY5umlmrv53zDAwBBbbg2_27PJu7qXDzPZZ-CVsgTq__L6-hQd3hsWZPJtNOizi9LDhpGXAEtr8Pam9z9TKiaEscH04Wp7MU8q1MGjwbxWDKNsFIIHrtzisGPdTDQwMjuATXQYu0N_VjbTjBt8UkjISv_1XzzlORSpzF54aTKCYSlAJ_0ZUNR-nEphRpU8PWKe-PLcjb5GRfZuq4YJeEnCeFoPfdBD9ZnLY46yv4aA3GfHyE9ONUcZKIA47GSfHhyLwHVoEKGAS4eOzxaKbS&amp;sai=AMfl-YRmaSS42zb5e4JGd4OTu1Jm7fShw9K240IbUbZMJOmuYY9E3Y-Wg0sqCvMfJOP8mCzM85aIH0tmPs-cU5ERLEFzL4weGOBIykSBUKuD-NZTvijLz2phiUhqdmE2Ea2Ebkcf-gf_c3AqZoKPvRU79EAqA1YkisKH43pVLQ3z&amp;sig=Cg0ArKJSzEhr5nYylmHZ&amp;urlfix=1&amp;nx=485&amp;ny=36&amp;dim=728x90&amp;adurl=https://www.123rf.com/%3Futm_source%3DPS%26utm_medium%3DCPM%26utm_campaign%3DWW%26dclid%3D%25edclid!%23display08p"><img src="https://s0.2mdn.net/4646536/1-USA-PROSPECTING-VectorPrice-728x90.jpg" alt="Advertisement" border="0" width="728" height="90" style="float: right;"></a><script data-jc="74" data-jc-version="r20200914" data-jcp-a-id="img_anch_CPO_n6iL7esCFecStwAdVsMMZg">(function(){/*  Copyright The Closure Library Authors. SPDX-License-Identifier: Apache-2.0 */ var b=/^(?:(?:https?|mailto|ftp):|[^:/?#]*(?:[/?#]|$))/i;var e,f=document.currentScript;e=(f=void 0===f?null:f)&&74==f.getAttribute("data-jc")?f:document.querySelector('[data-jc="74"]');if(null==e)throw Error("JSC not found 74");for(var g={},l=e.attributes,m=l.length-1;0<=m;m--){var n=l[m].name;0===n.indexOf("data-jcp-")&&(g[n.substring(9)]=l[m].value)} document.getElementById(g["a-id"]).addEventListener("mousedown",function(c){var h=c.currentTarget,a=h.querySelector("img[alt]");if(a){var d=h.href;var p=+Math.round(c.clientX-a.offsetLeft);c=+Math.round(c.clientY-a.offsetTop);a=+a.width+"x"+ +a.height;var k=/^(https?:[^:?]+[/]pcs[/]click[^/]+?)(?:&nx[^&]+&ny[^&]+&dim[^&]+)?(&adurl=.*)/.exec(d);d=k?k[1]+("&nx="+p+"&ny="+c+"&dim="+a)+k[2]:d;b.test(d)&&(h.href=d)}});}).call(this);</script></div>
+ --}}
 
 
 </body>

@@ -42,7 +42,7 @@
                         <div class="hero__search__form">
 
 
-                            <form action="#">
+                            <form action="{{ route('productsearchpage') }}" method="get" >
                                {{--  <div class="hero__search__categories">
 
                             <form action="{{ route('productsearchpage') }}" method="get">
@@ -73,10 +73,10 @@
                     </div>
                     <div class="hero__item set-bg" data-setbg="{{ asset('frondend/img/hero/banner.jpg') }}">
                         <div class="hero__text">
-                            <span>FRUIT FRESH</span>
+                            <span>Health <br>Recommendation</span>
                             <h2>Health Is<br />Wealth</h2>
                           {{--   <p>Free Pickup and Delivery Available</p> --}}
-                            <a href="#" class="primary-btn" >REGISTER NOW</a>
+                            <a href="{{ route('registerpage') }}" class="primary-btn" >Free Register</a>
                         </div>
                     </div>
                 </div>

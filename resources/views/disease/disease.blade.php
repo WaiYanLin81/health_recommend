@@ -94,21 +94,25 @@
                         </div>
                         <div class="featured__item__text">
                             <h6>{{$disease->name}}</h6>
+                            @role('Customer')
                             <h5 ><a href="{{ route('diseasedetailpage',$disease->id) }}" class="text-dark btn  container-fluid" style="text-decoration: none;border: 1px"> View Detail</a></h5>
+                            @else
+                            <h5 ><a href="{{ route('loginpage') }}" class="text-dark btn  container-fluid" style="text-decoration: none;border: 1px"> View Detail</a></h5>
+                            @endrole
                         </div>
                     </div>
               
             </div>
             @endforeach
         </div>
-</div>
 
-	 <div class="row justify-content-center ">
+
+	{{--  <div class="row justify-content-center ">
           <div class="col-md-12 text-center justify-content-center pagination">
-            <p>{!! $diseases->render() !!}</p>
+            <p>{!! $diseases->links() !!}</p>
           </div>
         </div>
-
+ --}}
 
 </div><br>
 	

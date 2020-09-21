@@ -43,7 +43,7 @@
   </form>
   @endauth
       {{-- <hr> --}}
-    </div>
+    
 
         <div class="col-12 col-lg-12 justify-content-center my-5">
           <h2 class="text-center">Recommend For:{{$diseases->name}}</h2>
@@ -51,7 +51,7 @@
 
         <div class="row">
         @foreach($diseases->products as $product) 
-        <div class="col-lg-8 py-5">
+        <div class="col-lg-8  my-5">
           <h3>{{ $product->name }}</h3>
           <a href="{{ route('productdetailpage',$product->id) }}">
           <img src="{{ asset($product->photo) }}" width="200" height="150">
@@ -106,7 +106,10 @@
     </div> --}}
 
  
+
 </div>
+</div>
+
 	
 @endsection
 

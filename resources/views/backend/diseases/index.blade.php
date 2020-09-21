@@ -10,6 +10,16 @@
   		</div>
   	</div>
     
+
+
+            <br><div class="input-group col-12">
+            <form  class="form-inline" action="{{ route('diseases.index') }}" method="get">
+                 <input class="form-control bg-light pl-4 border-right-0 border" type="search" placeholder="Search" name="search" id="">
+                              
+                 <button class="btn  my-2 my-sm-0 btn-primary" type="submit"><i class="fa fa fa-search"></i></button>
+            </form>
+        </div><br>
+
     <div class="row">
     	<div class="col-md-12">
     		<table class="table table-bordered">

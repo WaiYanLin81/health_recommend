@@ -14,10 +14,14 @@ class DiseaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+         $search = $request->search;
+        if($request->search){
+            $diseases = Disease::where('name','like','%'.$search.'%')->get();
+        }else{
          $diseases = Disease::all();
+        }
         return view('backend.diseases.index',compact('diseases'));
     }
 
