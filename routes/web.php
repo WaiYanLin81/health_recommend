@@ -46,6 +46,10 @@ Route::get('/registerpage','ShowController@registerfun')->name('registerpage');
 
 Route::get('/detailpage/{id}','ShowController@productdetailfun')->name('productdetailpage');
 
+Route::get('/disease/{id}','ShowController@diseasedetailfun')->name('diseasedetailpage');
+
+
+
 Route::get('/fruitspage/{id}','ShowController@fruitsfun')->name('fruitspage');
 
 Route::get('/diseasepage','ShowController@diseasefun')->name('diseasepage');
@@ -61,3 +65,6 @@ Auth::routes();
 
 //Example route
 Route::get('testing','TestController@testfun')->name('testpage');
+
+Route::post('/comments/add','CommentController@create');
+Route::get('/comments/delete/{id}','CommentController@delete');

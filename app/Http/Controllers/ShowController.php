@@ -45,6 +45,11 @@ class ShowController extends Controller
     	return view('productdetail',compact('product'));
     }
 
+    // public function diseasedetailfun($id){
+    //     $disease = Disease::find($id);
+    //     return view('disease.diseasedetailpage',compact('disease'));
+    // }
+
     public function blogfun()
     {
         $latests =Post::latest()->paginate(6);

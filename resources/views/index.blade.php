@@ -41,13 +41,18 @@
                     <div class="hero__search">
                         <div class="hero__search__form">
 
-                            <form action="{{ route('productsearchpage') }}" method="get">
+
+                            <form action="#">
                                {{--  <div class="hero__search__categories">
+
+                            <form action="{{ route('productsearchpage') }}" method="get">
+                                <div class="hero__search__categories">
+
 
                             <form  class="form-inline" action="{{ route('diseasepage') }}" method="get">
                            {{ <form action="#"> --}}
                                 {{-- <div class="hero__search__categories">
->>>>>>> e7d765355363327c0bf639c168b5c875ac63ef32
+
                                     All Categories
                                     <span class="arrow_carrot-down"></span>
                                 </div> --}}

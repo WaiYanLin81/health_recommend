@@ -14,4 +14,9 @@ class Disease extends Model
     	{
     	return $this->belongsToMany('App\Product','disease_product')->withPivot('description')->withTimestamps();
     	}
+
+    	public function comments()
+    	{
+    		return $this->hasMany('App\Comment');
+    	}
 }

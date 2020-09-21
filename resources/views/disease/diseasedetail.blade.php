@@ -11,9 +11,38 @@
       <h2>{{$diseases->name}}</h2>
      <p>{!! $diseases->about !!}</p>
    </div>
+ </div>
  
-      
-      
+      <ul class="list-group">
+    <li class="list-group-item {{-- active --}}  comment">
+      <b>Comments({{count($diseases->comments)}})</b>
+    </li>
+    @foreach($diseases->comments as $comment)
+    <li class="list-group-item">
+      {{$comment ->content}}
+    <a href="{{url("/comments/delete/$comment->id")}}" class="close">
+      &times;
+    </a>
+    <div class="small mt-2">
+      By <b>{{ $comment->user->name }}</b>,
+      {{$comment->created_at->diffForHumans()}}
+    </div>
+    </li>
+    @endforeach
+  </ul>
+  @auth
+
+  <form action="{{url('/comments/add')}}" method="post">
+    @csrf
+    <input type="hidden" name="disease_id" value="{{$diseases->id}}">
+
+
+    <textarea name="content" class="form-control mb-2" placeholder="New Comment"></textarea>
+    <input type="submit" value="Add Comment" class="btn  add__comment">
+
+  </form>
+  @endauth
+      {{-- <hr> --}}
     </div>
 
         <div class="col-12 col-lg-12 justify-content-center my-5">
@@ -22,7 +51,7 @@
 
         <div class="row">
         @foreach($diseases->products as $product) 
-        <div class="col-lg-8 py-5 ">
+        <div class="col-lg-8 py-5">
           <h3>{{ $product->name }}</h3>
           <a href="{{ route('productdetailpage',$product->id) }}">
           <img src="{{ asset($product->photo) }}" width="200" height="150">
@@ -37,7 +66,7 @@
       </div>
 
       <style >
-        .disease___btn
+        .disease___btn, .comment, .add__comment
         {
           background: #A0EA1D
 

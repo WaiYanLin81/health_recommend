@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Disease;
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
 
 class DiseaseController extends Controller
@@ -204,5 +205,10 @@ class DiseaseController extends Controller
         // //By Ye Win Naing
          $disease->delete();
         return redirect()->route('diseases.index');
+    }
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['disease','diseasedetailpage']);
     }
 }
