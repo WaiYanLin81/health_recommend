@@ -55,7 +55,7 @@
             <div class="header__top__right__language">
                 {{-- <img src="{{asset('frondend/img/language.png')}}" alt=""> --}}
                 @guest
-                <div class="text-dark"><a href="{{ route('loginpage') }}">Login</a></div>
+                <div class="text-dark"><a href="{{ route('loginpage') }}" class="text-dark">Login</a></div>
                 @else
                 <div class="text-uppercase">{{Auth::user()->name}}</div>
                 <span class="arrow_carrot-down"></span>
