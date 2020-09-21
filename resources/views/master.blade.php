@@ -97,7 +97,7 @@
                             </li>
                 <li><a href="{{ route('blogpage') }}">Blog</a></li>
                 <li><a href="{{ route('contactpage') }}">Contact</a></li>
-                <li><a href="{{ route('blogpage') }}">Blog</a></li>
+                <li><a href="{{ route('diseasepage') }}">Disease</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
