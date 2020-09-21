@@ -85,7 +85,7 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
+                <li class="active"><a href="{{ route('index') }}">Home</a></li>
                 
                  <li class=@yield('category')><a href="#">Category</a>
                                 <ul class="header__menu__dropdown">
